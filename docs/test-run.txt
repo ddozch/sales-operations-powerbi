@@ -1,0 +1,94 @@
+Recorded run: 2026-10-29 17:58 | powershell -ExecutionPolicy Bypass -File tools\run_tests.ps1 | Power BI Desktop 2.159.883.0 (Microsoft Store)
+Windows 10, PowerShell 5.1, .NET SDK 10.0.401; <project> = the folder of the clone
+
+== Data folder
+DataFolder = <project>\data\
+
+== Validate the TMDL model
+TMDL loads: compatibility level 1567, 12 tables, 73 columns, 29 measures, 12 relationships, 15 expressions
+Model rules: all passed
+
+== Open SalesOps.pbip in Power BI Desktop and refresh
+DataFolder = <project>\data\
+Opening <project>\SalesOps.pbip
+Engine on port 51929, Power BI Desktop PID 16352
+File opened
+Refresh done in 11.7 s
+  _Measures               0
+  Date                  730
+  Customer              420
+  Owner                  13
+  Product                25
+  Crew                    6
+  Orders              2,500
+  Order Lines         8,410
+  Installations       2,505
+  DQ Fields               9
+  DQ Checks          21,905
+  Snapshot                1
+Closed 1 tip pop-up(s)
+
+== Golden-master test
+Golden-master test: model on localhost:51929 against <project>\data\expected.json
+Seed 2610, report date 2026-10-28; tolerance money 0.005, rate 1E-06, decimal 1E-06, count 0
+
+row_counts                    7 passed,    0 failed
+  Measure                                     Model           Expected
+  Orders                                      2,387              2,387
+  Cancelled Orders                              113                113
+  Order Value                          9,708,156.41       9,708,156.41
+  Average Order Value                      4,067.10           4,067.10
+  Units Ordered                              73,461             73,461
+  Signed Orders                               2,206              2,206
+  Signed Value                         8,968,189.36       8,968,189.36
+  Unsigned Orders                               181                181
+  Order Value PY                       5,050,945.81       5,050,945.81
+  Order Value YTD                      4,657,210.60       4,657,210.60
+  Order Value PY YTD                   4,105,561.15       4,105,561.15
+  YTD Growth %                             13.4366%           13.4366%
+  Units Planned                              63,258             63,258
+  Units Installed                            62,058             62,058
+  Installation Rate %                      98.1030%           98.1030%
+  Open Orders                                   390                390
+  Delayed Starts                                 34                 34
+  Orders Installed                            1,848              1,848
+  Avg Days Signed to Installed            45.169138          45.169138
+  Units Backlog                               6,641              6,641
+  Orders Without Owner                           64                 64
+  Jobs                                        2,383              2,383
+  Checks                                     21,905             21,905
+  Filled Values                              20,609             20,609
+  Missing Values                              1,296              1,296
+  Completeness %                           94.0835%           94.0835%
+  Target Completeness                      95.0000%           95.0000%
+  Fields Below Target                             6                  6
+  Report Date                            2026-10-28         2026-10-28
+totals                       29 passed,    0 failed
+by_year                      50 passed,    0 failed
+by_month                    336 passed,    0 failed
+by_owner                    156 passed,    0 failed
+by_product_group             12 passed,    0 failed
+by_segment                   18 passed,    0 failed
+by_installation_status       21 passed,    0 failed
+by_crew                      12 passed,    0 failed
+by_year_owner               182 passed,    0 failed
+by_month_owner             1512 passed,    0 failed
+by_month_segment            720 passed,    0 failed
+dq_by_field                  63 passed,    0 failed
+dq_by_department             15 passed,    0 failed
+dq_by_month                  96 passed,    0 failed
+dq_by_owner                  52 passed,    0 failed
+utc_check                    27 passed,    0 failed
+delayed_orders               34 passed,    0 failed
+rows.dates                  730 passed,    0 failed
+rows.owners                  13 passed,    0 failed
+rows.customers              420 passed,    0 failed
+rows.products                25 passed,    0 failed
+rows.orders                2500 passed,    0 failed
+rows.installations         2505 passed,    0 failed
+
+Largest difference: count 0, money 0, rate 1.11E-16, decimal 0
+TOTAL: 9535 passed, 0 failed (1.8 s)
+Stopped Power BI Desktop PID 16352
+
+TESTS PASSED in 38 s

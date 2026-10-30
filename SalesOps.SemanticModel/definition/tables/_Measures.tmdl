@@ -1,0 +1,245 @@
+/// Home table of all measures ("Measures" is a reserved name in Power BI). Its only column is hidden, so Power BI shows it as a measure table.
+table _Measures
+
+	/// Non-cancelled orders, by created date.
+	measure Orders = CALCULATE ( COUNTROWS ( Orders ), KEEPFILTERS ( Orders[Is Cancelled] = FALSE () ) )
+		formatString: #,0
+		displayFolder: Sales
+
+	/// Cancelled orders (CRM status Canceled), by created date.
+	measure 'Cancelled Orders' = CALCULATE ( COUNTROWS ( Orders ), KEEPFILTERS ( Orders[Is Cancelled] = TRUE () ) )
+		formatString: #,0
+		displayFolder: Sales
+
+	/// Sum of the line amounts of non-cancelled orders, by created date. EUR.
+	measure 'Order Value' = CALCULATE ( SUM ( 'Order Lines'[Line Amount] ), KEEPFILTERS ( Orders[Is Cancelled] = FALSE () ) )
+		formatString: #,0.00
+		displayFolder: Sales
+
+	/// Order Value / Orders. EUR.
+	measure 'Average Order Value' =
+			-- Currency divided by a count stays currency (4 decimals); the average needs full precision
+			DIVIDE ( CONVERT ( [Order Value], DOUBLE ), [Orders] )
+		formatString: #,0.00
+		displayFolder: Sales
+
+	/// Quantity on installable lines of non-cancelled orders, by created date. Services and write-in lines are not counted.
+	measure 'Units Ordered' =
+			CALCULATE (
+			    SUM ( 'Order Lines'[Quantity] ),
+			    KEEPFILTERS ( 'Order Lines'[Is Installable] = TRUE () ),
+			    KEEPFILTERS ( Orders[Is Cancelled] = FALSE () )
+			)
+		formatString: #,0
+		displayFolder: Sales
+
+	/// Non-cancelled orders with a signed date, by signed date.
+	measure 'Signed Orders' =
+			CALCULATE (
+			    [Orders],
+			    USERELATIONSHIP ( Orders[Signed Date], 'Date'[Date] ),
+			    KEEPFILTERS ( NOT ISBLANK ( Orders[Signed Date] ) )
+			)
+		formatString: #,0
+		displayFolder: Sales
+
+	/// Order Value of signed orders, by signed date. EUR.
+	measure 'Signed Value' =
+			CALCULATE (
+			    [Order Value],
+			    USERELATIONSHIP ( Orders[Signed Date], 'Date'[Date] ),
+			    KEEPFILTERS ( NOT ISBLANK ( Orders[Signed Date] ) )
+			)
+		formatString: #,0.00
+		displayFolder: Sales
+
+	/// Non-cancelled orders that are not signed yet, by created date.
+	measure 'Unsigned Orders' = CALCULATE ( [Orders], KEEPFILTERS ( ISBLANK ( Orders[Signed Date] ) ) )
+		formatString: #,0
+		displayFolder: Sales
+
+	/// Order Value of the same period one year earlier. EUR.
+	measure 'Order Value PY' = CALCULATE ( [Order Value], SAMEPERIODLASTYEAR ( 'Date'[Date] ) )
+		formatString: #,0.00
+		displayFolder: Sales
+
+	/// Order Value from 1 January of the year of the last date in the filter context up to that date, but never past the report date. EUR.
+	measure 'Order Value YTD' =
+			VAR LastDay = MAX ( 'Date'[Date] )
+			VAR EndDay = MIN ( LastDay, [Report Date] )
+			VAR StartDay = DATE ( YEAR ( LastDay ), 1, 1 )
+			RETURN
+			    IF (
+			        NOT ISBLANK ( LastDay ),
+			        CALCULATE ( [Order Value], DATESBETWEEN ( 'Date'[Date], StartDay, EndDay ) )
+			    )
+		formatString: #,0.00
+		displayFolder: Sales
+
+	/// Order Value YTD of the same window one year earlier (for 2026 as of 28 Oct: 1 Jan - 28 Oct 2025). EUR.
+	measure 'Order Value PY YTD' =
+			VAR LastDay = MAX ( 'Date'[Date] )
+			VAR EndDay = MIN ( LastDay, [Report Date] )
+			VAR StartDay = DATE ( YEAR ( LastDay ), 1, 1 )
+			RETURN
+			    IF (
+			        NOT ISBLANK ( LastDay ),
+			        CALCULATE (
+			            [Order Value],
+			            DATESBETWEEN ( 'Date'[Date], EDATE ( StartDay, -12 ), EDATE ( EndDay, -12 ) )
+			        )
+			    )
+		formatString: #,0.00
+		displayFolder: Sales
+
+	/// (Order Value YTD - Order Value PY YTD) / Order Value PY YTD.
+	measure 'YTD Growth %' = DIVIDE ( [Order Value YTD] - [Order Value PY YTD], [Order Value PY YTD] )
+		formatString: 0.0%
+		displayFolder: Sales
+
+	/// Units Ordered by planned install month. Orders without a planned month are not counted.
+	measure 'Units Planned' =
+			CALCULATE (
+			    [Units Ordered],
+			    USERELATIONSHIP ( Orders[Planned Install Month], 'Date'[Date] ),
+			    KEEPFILTERS ( NOT ISBLANK ( Orders[Planned Install Month] ) )
+			)
+		formatString: #,0
+		displayFolder: Operations
+
+	/// Installed units of non-cancelled jobs of non-cancelled orders, by actual end date, up to the report date.
+	measure 'Units Installed' =
+			VAR ReportDay = [Report Date]
+			-- The Date table has a blank row (blank signed dates / planned months have no date);
+			-- it must not match the blank end date of unfinished jobs
+			VAR EndDates =
+			    FILTER ( VALUES ( 'Date'[Date] ), NOT ISBLANK ( 'Date'[Date] ) && 'Date'[Date] <= ReportDay )
+			RETURN
+			    -- Installations has no Date relationship (it would be ambiguous through Orders),
+			    -- so the dates of the filter context are moved to the actual end date
+			    CALCULATE (
+			        SUM ( Installations[Installed Units] ),
+			        REMOVEFILTERS ( 'Date' ),
+			        TREATAS ( EndDates, Installations[Actual End Date] ),
+			        KEEPFILTERS ( Installations[Job Status] <> "Cancelled" ),
+			        KEEPFILTERS ( Orders[Is Cancelled] = FALSE () )
+			    )
+		formatString: #,0
+		displayFolder: Operations
+
+	/// Units Installed / Units Planned.
+	measure 'Installation Rate %' = DIVIDE ( [Units Installed], [Units Planned] )
+		formatString: 0.0%
+		displayFolder: Operations
+
+	/// Non-cancelled orders with installable units that are not installed yet, by created date.
+	measure 'Open Orders' =
+			CALCULATE (
+			    COUNTROWS ( Orders ),
+			    KEEPFILTERS ( Orders[Is Cancelled] = FALSE () ),
+			    KEEPFILTERS ( Orders[Installable Units] > 0 ),
+			    KEEPFILTERS ( Orders[Installation Status] <> "Installed" )
+			)
+		formatString: #,0
+		displayFolder: Operations
+
+	/// Orders whose earliest planned start is before the report date and no job has started.
+	measure 'Delayed Starts' = CALCULATE ( COUNTROWS ( Orders ), KEEPFILTERS ( Orders[Installation Status] = "Delayed start" ) )
+		formatString: #,0
+		displayFolder: Operations
+
+	/// Orders with all installable units installed by the report date.
+	measure 'Orders Installed' = CALCULATE ( COUNTROWS ( Orders ), KEEPFILTERS ( Orders[Installation Status] = "Installed" ) )
+		formatString: #,0
+		displayFolder: Operations
+
+	/// Average number of days from the signed date to the installed date, over installed orders with a signed date.
+	measure 'Avg Days Signed to Installed' =
+			AVERAGEX (
+			    CALCULATETABLE (
+			        Orders,
+			        KEEPFILTERS ( Orders[Installation Status] = "Installed" ),
+			        KEEPFILTERS ( NOT ISBLANK ( Orders[Signed Date] ) )
+			    ),
+			    DATEDIFF ( Orders[Signed Date], Orders[Installed Date], DAY )
+			)
+		formatString: 0.0
+		displayFolder: Operations
+
+	/// Units still to install on signed, non-cancelled orders that are not installed: Installable Units - Installed Units.
+	measure 'Units Backlog' =
+			SUMX (
+			    CALCULATETABLE (
+			        Orders,
+			        KEEPFILTERS ( Orders[Is Cancelled] = FALSE () ),
+			        KEEPFILTERS ( NOT ISBLANK ( Orders[Signed Date] ) ),
+			        KEEPFILTERS ( Orders[Installation Status] <> "Installed" )
+			    ),
+			    Orders[Installable Units] - Orders[Installed Units]
+			)
+		formatString: #,0
+		displayFolder: Operations
+
+	/// Non-cancelled orders without an owner in the CRM.
+	measure 'Orders Without Owner' = CALCULATE ( [Orders], KEEPFILTERS ( Orders[Owner Key] = "(no owner)" ) )
+		formatString: #,0
+		displayFolder: Operations
+
+	/// Installation jobs that are not cancelled. Only the job status counts: a live job of a cancelled order is counted too.
+	measure Jobs = CALCULATE ( COUNTROWS ( Installations ), KEEPFILTERS ( Installations[Job Status] <> "Cancelled" ) )
+		formatString: #,0
+		displayFolder: Operations
+
+	/// Number of data-quality checks: one per applicable record and field.
+	measure Checks = COUNTROWS ( 'DQ Checks' )
+		formatString: #,0
+		displayFolder: Data quality
+
+	/// Checks where the field is filled.
+	measure 'Filled Values' = SUM ( 'DQ Checks'[Is Filled] )
+		formatString: #,0
+		displayFolder: Data quality
+
+	/// Checks where the field is empty: Checks - Filled Values.
+	measure 'Missing Values' = [Checks] - [Filled Values]
+		formatString: #,0
+		displayFolder: Data quality
+
+	/// Filled Values / Checks.
+	measure 'Completeness %' = DIVIDE ( [Filled Values], [Checks] )
+		formatString: 0.0%
+		displayFolder: Data quality
+
+	/// Completeness the business expects for every field.
+	measure 'Target Completeness' = 0.95
+		formatString: 0.0%
+		displayFolder: Data quality
+
+	/// Number of data-quality fields with checks whose Completeness % is below Target Completeness.
+	measure 'Fields Below Target' =
+			VAR Target = [Target Completeness]
+			VAR Below =
+			    COUNTROWS (
+			        FILTER ( VALUES ( 'DQ Fields'[Field Key] ), [Checks] > 0 && [Completeness %] < Target )
+			    )
+			RETURN
+			    -- 0 instead of blank when there are checks but every field meets the target
+			    IF ( ISBLANK ( Below ) && [Checks] > 0, 0, Below )
+		formatString: #,0
+		displayFolder: Data quality
+
+	/// Local date of the CRM export. All "as of" rules (status, YTD, Is Past) use this date.
+	measure 'Report Date' = MAX ( Snapshot[Report Date] )
+		formatString: yyyy-mm-dd
+		displayFolder: General
+
+	column Placeholder
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Placeholder
+
+	partition _Measures = m
+		mode: import
+		source = #table(type table [Placeholder = text], {})
+

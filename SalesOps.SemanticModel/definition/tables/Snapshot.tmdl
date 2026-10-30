@@ -1,0 +1,26 @@
+/// One row: the local date of the CRM export, used as the report date.
+table Snapshot
+
+	column 'Report Date'
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: Report Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Description of the export, from export_info.csv.
+	column Source
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Source
+
+	partition Snapshot = m
+		mode: import
+		source =
+				let
+				    Source = Table.SelectColumns(stgExportInfo, {"Report Date", "Source"}),
+				    Result = Table.TransformColumnTypes(Source, {{"Report Date", type date}, {"Source", type text}})
+				in
+				    Result
+

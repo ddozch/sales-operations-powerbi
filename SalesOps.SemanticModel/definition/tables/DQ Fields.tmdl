@@ -1,0 +1,61 @@
+/// Catalog of the CRM fields checked on the data-quality page: which record type, who must fill it, and the rule.
+table 'DQ Fields'
+
+	column 'Field Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Field Key
+
+	column Field
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Field
+		sortByColumn: 'Sort Order'
+
+	/// Customer, Order, Order line or Installation.
+	column 'Record Type'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Record Type
+
+	/// Department that must fill the field: Sales, Installation or Back office.
+	column 'Responsible Department'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Responsible Department
+
+	/// Which records are checked and when the field counts as filled.
+	column Rule
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Rule
+
+	column 'Sort Order'
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Sort Order
+
+	partition 'DQ Fields' = m
+		mode: import
+		source =
+				let
+				    Rows = {
+				        {1, "City", "Customer", "Sales", "Every customer has a city.", 1},
+				        {2, "Segment", "Customer", "Sales", "Every customer has a segment.", 2},
+				        {3, "Owner", "Order", "Sales", "Every non-cancelled order has an owner.", 3},
+				        {4, "Planned install month", "Order", "Sales", "Every signed, non-cancelled order with installable units has a planned install month.", 4},
+				        {5, "Product", "Order line", "Sales", "Every line of a non-cancelled order uses a catalog product; a write-in line counts as missing.", 5},
+				        {6, "Crew", "Installation", "Installation", "Every scheduled, started or completed job has a crew.", 6},
+				        {7, "Coordinator", "Installation", "Installation", "Every non-cancelled job has a coordinator.", 7},
+				        {8, "Actual start", "Installation", "Installation", "Every started or completed job has an actual start.", 8},
+				        {9, "Specification date", "Installation", "Back office", "Every completed job has a specification date.", 9}
+				    },
+				    Source = #table({"Field Key", "Field", "Record Type", "Responsible Department", "Rule", "Sort Order"}, Rows),
+				    Result = Table.TransformColumnTypes(Source, {{"Field Key", Int64.Type}, {"Field", type text}, {"Record Type", type text}, {"Responsible Department", type text}, {"Rule", type text}, {"Sort Order", Int64.Type}})
+				in
+				    Result
+

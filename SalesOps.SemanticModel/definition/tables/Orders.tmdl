@@ -1,0 +1,125 @@
+/// Sales orders (Dataverse salesorder) with the installation status as of the report date. Dates are local (Europe/Warsaw).
+table Orders
+
+	column 'Order Key'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Order Key
+
+	column 'Order No'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Order No
+
+	column 'Customer Key'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Customer Key
+
+	column 'Owner Key'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Owner Key
+
+	/// Local date the order was created (active relationship to Date).
+	column 'Created Date'
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: Created Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Local date the contract was signed; blank when not signed yet (inactive relationship to Date).
+	column 'Signed Date'
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: Signed Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// First day of the planned install month (inactive relationship to Date).
+	column 'Planned Install Month'
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: Planned Install Month
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Dataverse statecode name: Active, Submitted, Canceled, Fulfilled.
+	column 'CRM Status'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: CRM Status
+
+	column 'Is Cancelled'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Is Cancelled
+
+	/// Quantity on installable lines (services and write-in lines excluded).
+	column 'Installable Units'
+		dataType: int64
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: Installable Units
+
+	/// Units of non-cancelled jobs that ended on or before the report date.
+	column 'Installed Units'
+		dataType: int64
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: Installed Units
+
+	/// Cancelled, No installation, Installed, In progress, To schedule, Delayed start or Scheduled, as of the report date.
+	column 'Installation Status'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Installation Status
+		sortByColumn: 'Installation Status Sort'
+
+	column 'Installation Status Sort'
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Installation Status Sort
+
+	/// Latest actual end date of the order's jobs when the status is Installed, else blank.
+	column 'Installed Date'
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: Installed Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Earliest planned start of the order's non-cancelled jobs.
+	column 'First Planned Start'
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: First Planned Start
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition Orders = m
+		mode: import
+		source =
+				let
+				    Source = stgOrderFacts,
+				    Renamed = Table.RenameColumns(Source, {{"salesorderid", "Order Key"}, {"ordernumber", "Order No"}, {"customerid", "Customer Key"}, {"ops_plannedinstallmonth", "Planned Install Month"}, {"statecodename", "CRM Status"}}),
+				    StatusOrder = {"To schedule", "Scheduled", "Delayed start", "In progress", "Installed", "No installation", "Cancelled"},
+				    WithSort = Table.AddColumn(Renamed, "Installation Status Sort", each List.PositionOf(StatusOrder, [Installation Status]) + 1, Int64.Type),
+				    Result = Table.SelectColumns(WithSort, {"Order Key", "Order No", "Customer Key", "Owner Key", "Created Date", "Signed Date", "Planned Install Month", "CRM Status", "Is Cancelled", "Installable Units", "Installed Units", "Installation Status", "Installation Status Sort", "Installed Date", "First Planned Start"})
+				in
+				    Result
+

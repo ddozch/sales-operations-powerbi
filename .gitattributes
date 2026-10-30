@@ -1,0 +1,37 @@
+# Baseline: Git detects text files and stores them with LF, whatever core.autocrlf is
+* text=auto
+# Windows tooling (PowerShell 5.1, .NET) expects CRLF in scripts and project files
+*.ps1 text eol=crlf
+*.cs text eol=crlf
+*.csproj text eol=crlf
+# The CSV export is stored byte for byte: rows end with CRLF (RFC 4180, as tools/generate_data.py
+# writes them) and some quoted values contain a bare LF that line-end conversion would change
+*.csv -text
+*.py text eol=lf
+*.md text eol=lf
+# Power BI Desktop writes the PBIP files itself: normalise them in the repo, no forced line ends
+*.pbip text
+*.pbir text
+*.pbism text
+*.tmdl text
+*.json text
+# The Python tools write these JSON files with LF: check them out with LF too, so that a rebuild
+# leaves git status clean (with CRLF Git would list them as changed although git diff is empty)
+data/expected.json text eol=lf
+SalesOps.Report/**/*.json text eol=lf
+# DataFolder holds an absolute path of the PC. The clean filter that tools/set_data_folder.ps1
+# registers replaces it with a placeholder, so the repository never holds a local path. A clone
+# does not copy the filter: run set_data_folder.ps1 in every new clone before the first commit
+SalesOps.SemanticModel/definition/expressions.tmdl filter=datafolder
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.abf binary
+*.pbix binary
+*.pbit binary
+*.xlsx binary
+*.mp4 binary

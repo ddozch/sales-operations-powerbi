@@ -1,0 +1,53 @@
+relationship OrderLines_Orders
+	fromColumn: 'Order Lines'.'Order Key'
+	toColumn: Orders.'Order Key'
+
+relationship OrderLines_Product
+	fromColumn: 'Order Lines'.'Product Key'
+	toColumn: Product.'Product Key'
+
+relationship Orders_Customer
+	fromColumn: Orders.'Customer Key'
+	toColumn: Customer.'Customer Key'
+
+relationship Orders_Owner
+	fromColumn: Orders.'Owner Key'
+	toColumn: Owner.'Owner Key'
+
+relationship Orders_CreatedDate
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Orders.'Created Date'
+	toColumn: Date.Date
+
+relationship Orders_SignedDate
+	isActive: false
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Orders.'Signed Date'
+	toColumn: Date.Date
+
+relationship Orders_PlannedInstallMonth
+	isActive: false
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Orders.'Planned Install Month'
+	toColumn: Date.Date
+
+relationship Installations_Orders
+	fromColumn: Installations.'Order Key'
+	toColumn: Orders.'Order Key'
+
+relationship Installations_Crew
+	fromColumn: Installations.Crew
+	toColumn: Crew.Crew
+
+relationship DQChecks_DQFields
+	fromColumn: 'DQ Checks'.'Field Key'
+	toColumn: 'DQ Fields'.'Field Key'
+
+relationship DQChecks_Owner
+	fromColumn: 'DQ Checks'.'Owner Key'
+	toColumn: Owner.'Owner Key'
+
+relationship DQChecks_CreatedDate
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'DQ Checks'.'Created Date'
+	toColumn: Date.Date

@@ -1,0 +1,36 @@
+/// Customers (Dataverse account). Empty city or segment shows as "(not set)".
+table Customer
+
+	column 'Customer Key'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Customer Key
+
+	column Customer
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Customer
+
+	column City
+		dataType: string
+		summarizeBy: none
+		sourceColumn: City
+
+	column Segment
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Segment
+
+	partition Customer = m
+		mode: import
+		source =
+				let
+				    Source = stgAccounts,
+				    Renamed = Table.RenameColumns(Source, {{"accountid", "Customer Key"}, {"name", "Customer"}}),
+				    WithCity = Table.AddColumn(Renamed, "City", each [address1_city] ?? "(not set)", type text),
+				    WithSegment = Table.AddColumn(WithCity, "Segment", each [ops_segment] ?? "(not set)", type text),
+				    Result = Table.SelectColumns(WithSegment, {"Customer Key", "Customer", "City", "Segment"})
+				in
+				    Result
+

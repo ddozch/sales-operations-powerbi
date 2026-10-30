@@ -1,0 +1,61 @@
+Recorded run of tools\run_mutants.ps1, 2026-10-29 17:43, on a Power BI Desktop session opened and refreshed by tools\open_desktop.ps1 (same data and expected.json as docs\test-run.txt)
+Command: powershell -ExecutionPolicy Bypass -File tools\run_mutants.ps1 -Port <port>
+Each mutant is one deliberate mistake from tools\mutants.json, applied to the model in the running Desktop.
+"killed" = the golden-master test fails; the counts are the failing checks per section of data\expected.json.
+
+
+== Mutation run
+Mutation run on localhost:51631: 24 mutants
+Baseline: 9535 passed, 0 failed
+
+- Units Installed keeps the jobs of cancelled orders
+    killed: 13 checks fail in totals 2, by_year 2, by_month 2, by_owner 1, by_segment 1, by_installation_status 1, by_crew 1, by_year_owner 1, by_month_owner 1, by_month_segment 1
+- Units Installed removes every filter on Orders, not only the Date filter
+    killed: 468 checks fail in by_owner 13, by_segment 6, by_installation_status 7, by_year_owner 26, by_month_owner 285, by_month_segment 131
+- Jobs drops the live jobs of cancelled orders
+    killed: 4 checks fail in totals 1, by_crew 3
+- Signed Value by created date (USERELATIONSHIP missing)
+    killed: 307 checks fail in by_year 2, by_month 22, by_year_owner 12, by_month_owner 140, by_month_segment 131
+- Order Value PY YTD not capped at the report date
+    killed: 39 checks fail in totals 2, by_year 2, by_month 6, by_year_owner 12, by_month_owner 17
+- Installation Rate % divides by Units Ordered
+    killed: 25 checks fail in totals 1, by_year 2, by_month 22
+- No time-zone conversion: local date = UTC date
+    killed: 451 checks fail in totals 5, by_year 31, by_month 137, by_year_owner 26, by_month_owner 109, by_month_segment 54, dq_by_month 49, rows.orders 31, rows.installations 9
+- Fixed UTC+1 all year (no summer time)
+    killed: 194 checks fail in totals 1, by_year 2, by_month 62, by_month_owner 42, by_month_segment 34, dq_by_month 26, rows.orders 21, rows.installations 6
+- Fixed UTC+2 all year
+    killed: 58 checks fail in totals 1, by_year 2, by_month 15, by_month_owner 9, by_month_segment 8, dq_by_month 6, rows.orders 11, rows.installations 6
+- US summer-time dates (2nd Sunday of March to 1st Sunday of November)
+    killed: 57 checks fail in totals 1, by_year 2, by_month 15, by_month_owner 9, by_month_segment 8, dq_by_month 6, rows.orders 10, rows.installations 6
+- Summer time starts a week early
+    killed: 9 checks fail in totals 1, by_year 2, rows.orders 4, rows.installations 2
+- Summer time starts a week late
+    killed: 80 checks fail in totals 1, by_year 2, by_month 26, by_month_owner 16, by_month_segment 14, dq_by_month 12, rows.orders 6, rows.installations 3
+- Summer time ends a week early
+    killed: 8 checks fail in totals 1, by_year 1, rows.orders 4, rows.installations 2
+- Summer time ends a week late
+    killed: 51 checks fail in totals 1, by_year 2, by_month 15, by_month_owner 9, by_month_segment 8, dq_by_month 6, rows.orders 6, rows.installations 4
+- CSV read as Windows-1250 instead of UTF-8
+    killed: 757 checks fail in by_owner 12, dq_by_owner 4, rows.owners 2, rows.customers 225, rows.installations 514
+- CSV read without RFC 4180 quoting
+    killed: 168 checks fail in row_counts 1, totals 7, by_year 11, by_month 55, by_owner 6, by_product_group 1, by_segment 2, by_year_owner 19, by_month_owner 60, by_month_segment 6
+- Month labels in the culture of a Polish PC
+    killed: 730 checks fail in rows.dates 730
+- Month labels without the year
+    killed: 730 checks fail in rows.dates 730
+- Is Past compared with today instead of the report date
+    killed: 1 checks fail in rows.dates 1
+- Empty city kept blank instead of (not set)
+    killed: 44 checks fail in rows.customers 44
+- Installation status over all jobs, cancelled jobs included
+    killed: 32 checks fail in totals 2, by_year 3, by_owner 3, by_installation_status 4, delayed_orders 5, rows.orders 15
+- A job counts as started only with an actual start
+    killed: 12 checks fail in totals 1, by_year 1, by_owner 2, by_installation_status 4, delayed_orders 2, rows.orders 2
+- Delayed start includes a planned start on the report date
+    killed: 10 checks fail in totals 1, by_year 1, by_owner 2, by_installation_status 2, delayed_orders 2, rows.orders 2
+- Installation DQ checks skip the jobs of cancelled orders
+    killed: 63 checks fail in totals 3, by_year 6, by_owner 12, dq_by_field 12, dq_by_department 6, dq_by_month 12, dq_by_owner 12
+
+Restored model: 9535 passed, 0 failed
+MUTANTS: 24 killed, 0 survived (92 s)

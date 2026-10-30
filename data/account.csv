@@ -1,0 +1,421 @@
+accountid,name,address1_city,ops_segment,ownerid,createdon
+8146615e-a1c4-409c-94fb-902375f24864,Brightway Hotels,Wrocław,Hotel,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2024-12-31T23:30:00Z
+cc356579-d7ed-47b3-b3c8-67de3c900e6b,Ironbridge Real Estate,Gdańsk,Property manager,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T19:00:00Z
+c2fa9abf-db0e-4f5c-b59c-7a086283ef7d,Redwood Real Estate,,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T19:00:00Z
+8c71e68d-bb0e-44a2-8e85-5eac3a194eab,Redwood Health Centre,Warszawa,,b5e654fa-1967-4658-ada1-34aa245501b1,2025-01-01T19:01:00Z
+3c29d636-eb1a-4400-9e74-c8fbfc464aeb,Cedar Grove Real Estate,Wrocław,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T19:02:00Z
+464f089d-f97e-485d-bed4-365a8a396be5,Juniper Housing Association,Warszawa,Housing cooperative,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-01-01T19:03:00Z
+f5da974e-7e49-42a1-88c2-0a4390ed8153,Rosewood Residents Cooperative,Łódź,Housing cooperative,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T19:04:00Z
+eaa7f117-e7a3-4cf1-abeb-a2542400994e,Hillcrest Office Tower,Łódź,Office building,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T19:05:00Z
+a20a9e32-aa84-4f41-b37a-0b6485451bde,Westbrook Suites,Łódź,Hotel,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T19:05:00Z
+3fa55981-0324-4232-9601-35bc43b797ed,Clearview Property Management,Kraków,Property manager,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-01-01T19:06:00Z
+7b8f9ea4-b247-410a-8174-15060a1ad609,Northgate Property Management,Poznań,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T19:06:00Z
+53432913-399c-4b41-8c99-6f8a836dac8b,Norwood Suites,Łódź,,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T19:06:00Z
+261995d5-b65b-45b7-ae07-f4cf1abdb347,Summit Sports Hall,Wrocław,Public sector,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T19:06:00Z
+edca3e1e-22b5-4f50-b7aa-3d7c82b111e0,Northgate Hotel,Szczecin,Hotel,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T19:07:00Z
+844e8707-0c15-4065-966d-2ddb62359132,Stonehill Estates,Gdańsk,Property manager,b5e654fa-1967-4658-ada1-34aa245501b1,2025-01-01T19:07:00Z
+ba271829-951f-4ab9-80f9-681203ab8cd5,Moorland Office Tower,Łódź,Office building,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T19:08:00Z
+6ee7f51d-9d56-42d4-be0e-2572ef7c89ad,Pinecrest Residents Cooperative,Wrocław,Housing cooperative,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T19:08:00Z
+2624071b-b99e-4649-adfc-bfa17defba0a,Thornbury Health Centre,Wrocław,,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T19:08:00Z
+82e9670c-7942-48c5-9d06-3825fc6374f9,Stonehill Residents Cooperative,Warszawa,Housing cooperative,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T19:09:00Z
+dc13c0a8-726f-48a5-9074-0cd0cf1507ed,Cedar Grove School,Kraków,Public sector,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T19:10:00Z
+4d94388f-840d-4713-a43f-49c7fc63c6cc,Goldcrest Housing Cooperative,Łódź,Housing cooperative,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-01-01T19:11:00Z
+39cbeb4d-7217-4be0-b1bc-8fd81ced550c,Goldcrest School,Kraków,Public sector,b5e654fa-1967-4658-ada1-34aa245501b1,2025-01-01T19:12:00Z
+22b0a761-07e8-4a35-b4ac-56828d837a6c,Moorland Residents Cooperative,Wrocław,Housing cooperative,b5e654fa-1967-4658-ada1-34aa245501b1,2025-01-01T19:13:00Z
+fa34ae24-e4b0-4392-86b8-03b79528c0b5,Moorland Plaza,,Office building,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T19:14:00Z
+d5ea05c5-7766-4b30-894d-bce5d3bb94fb,Summit Housing Association,Warszawa,Housing cooperative,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T19:14:00Z
+1a007ced-bbbf-4af2-ab7b-acbff97be20c,Moorland City Library,,,b5e654fa-1967-4658-ada1-34aa245501b1,2025-01-01T19:15:00Z
+5a709464-8929-43f2-b3b1-14dc58f351e9,Silverline Properties,Lublin,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T19:15:00Z
+1757e728-ce3f-491c-b266-b32795060bda,Copperfield Hotels,Kraków,Hotel,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T19:17:00Z
+073066dc-9e56-4f7a-a3f6-0b8712456434,Ashford Housing Cooperative,Kraków,Housing cooperative,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-01-01T19:18:00Z
+5a706141-e802-4176-a387-dc8fe0e64fc4,Linden Housing Cooperative,,Housing cooperative,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T19:20:00Z
+50792102-46d1-434a-b32c-72b519c3619e,Moorland Real Estate,Warszawa,Property manager,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T19:20:00Z
+4bf796d0-f657-4493-924c-e017c794d100,Stonehill Business Park,Warszawa,Office building,b5e654fa-1967-4658-ada1-34aa245501b1,2025-01-01T19:20:00Z
+c9649a16-0ea6-4175-9175-1a8c8530b566,Willowbank Housing Cooperative,Łódź,Housing cooperative,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-01-01T19:20:00Z
+55d6ed33-c600-44b5-ac9d-c9cc5b5d7ec9,Bluewater Residents Cooperative,Szczecin,Housing cooperative,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T19:21:00Z
+fbd69e52-0bd8-45d4-864e-9407c2b44770,Kingsbridge Residents Cooperative,,Housing cooperative,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T19:22:00Z
+ceed2cdb-d18e-453a-a08e-dbc6943f4f4f,Norwood Housing Association,Poznań,Housing cooperative,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-01-01T19:25:00Z
+caecf1d2-47d8-42bf-bd74-789f6c9dc756,Oakridge Plaza,,Office building,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T19:25:00Z
+a2cbb117-0c83-4f01-b30e-fa686b6d88ad,Redwood Properties,Gdańsk,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T19:26:00Z
+5be28dcd-7769-403e-9c74-1cf2409e6984,Juniper Business Park,,Office building,b5e654fa-1967-4658-ada1-34aa245501b1,2025-01-01T19:28:00Z
+1cdb9da5-c882-49ec-90f0-b70b135e74cc,Westbrook Residents Cooperative,Warszawa,Housing cooperative,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T19:28:00Z
+c7029c01-5bf9-4412-a8ee-9aecdb3c0e98,Eastwood City Library,,,b5e654fa-1967-4658-ada1-34aa245501b1,2025-01-01T19:29:00Z
+bfe2c945-de08-4d01-8cdc-1a19e40b7f41,"Lakeside Plaza, Sp. z o.o.",Warszawa,Office building,b5e654fa-1967-4658-ada1-34aa245501b1,2025-01-01T19:29:00Z
+5459a50d-65f8-4269-873c-529fd89358e0,Northgate Housing Association,Szczecin,Housing cooperative,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T19:29:00Z
+2804d230-ce05-466f-a2b1-fba8c2f39b29,Stonehill Suites,,Hotel,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T19:29:00Z
+f3a98fad-f0c1-450a-8a30-aff7984d5fb8,Oakmont Properties,Kraków,Property manager,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T19:30:00Z
+94ac7886-6251-47d0-ba2a-a20910782c38,Linden Office Tower,Łódź,Office building,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T19:31:00Z
+333e0b8a-5b0c-4ceb-a77f-2feddf84254d,Eastwood Properties,Lublin,Property manager,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T19:33:00Z
+9600f777-dbe3-446b-ba45-02f8c7713ce7,Northgate Hotels,Kraków,Hotel,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T19:33:00Z
+686cd58a-8b76-4d6c-98d5-5a8e083545c8,Parkside Properties,Szczecin,Property manager,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-01-01T19:33:00Z
+eab1135c-47e1-4ffd-b43f-b5f080506c91,Silverline Residents Cooperative,Łódź,Housing cooperative,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T19:33:00Z
+9dc8b320-cb88-49b8-b0c3-8f5e5cd5f158,Maplewood Office Tower,Poznań,Office building,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T19:34:00Z
+be2a9439-1ec7-44c7-b988-307ffe8768db,Redwood Residents Cooperative,Warszawa,Housing cooperative,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T19:34:00Z
+b3a01013-ab63-49f3-b4cb-5caea6520e58,Cedar Grove Property Management,Kraków,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T19:35:00Z
+7c640554-fc59-4260-8200-ddf7a1fe8071,Eastwood Housing Association,Wrocław,Housing cooperative,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T19:35:00Z
+fc0677cc-9925-496d-884d-f52745236b8f,Lakeside Properties,Kraków,Property manager,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-01-01T19:36:00Z
+52201dc9-1171-479d-a204-a25ee736749f,Norwood Offices,Lublin,,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T19:36:00Z
+8c4c2bd9-7c5d-4c3d-a85a-91b021b80dba,Kingsbridge Plaza,Łódź,,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T19:37:00Z
+c8bae31d-b63e-45e3-8ab5-a0cfd2893759,Riverside Housing Association,Szczecin,,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-01-01T19:37:00Z
+6945e906-61be-4e53-a69a-428fda981be9,Brightway Sports Hall,Wrocław,Public sector,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-01-01T19:39:00Z
+e1385e1f-36c7-45e1-a985-ae5e122c1045,Kingsbridge Real Estate,Gdańsk,,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T19:39:00Z
+2a17f012-bd87-4dcb-8e3c-1602d3eb2a4b,Linden Sports Hall,Łódź,Public sector,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T19:39:00Z
+dc6ae4a7-143e-492f-a656-4dcf7cd7d8d1,Rosewood Suites,Warszawa,,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T19:39:00Z
+f1efcc1a-6615-450a-8cb3-a5419096c2e2,Northgate Offices,Łódź,Office building,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T19:41:00Z
+2d0e9dc4-729f-408b-9fe1-906579d7a0a0,Summit Suites,,Hotel,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T19:41:00Z
+cb0575fb-c86d-42c7-801c-91a83db2289b,Norwood School,Wrocław,,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-01-01T19:42:00Z
+edab79ac-b6fa-43df-9b5b-d6c149d6d0d5,Oakmont Property Management,Łódź,Property manager,b5e654fa-1967-4658-ada1-34aa245501b1,2025-01-01T19:42:00Z
+775e1547-b8bc-4d2a-9225-dd7a49ec2578,Westbrook Properties,Wrocław,Property manager,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T19:42:00Z
+b54be60d-2f46-4f1f-9e12-a32a3dc41efe,Ironbridge Estates,Kraków,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T19:43:00Z
+86d64073-e677-48cd-b2bd-7c244e86b227,Maplewood Housing Cooperative,Kraków,Housing cooperative,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-01-01T19:43:00Z
+61f8eb33-ae08-4a5a-a990-bbedbc263e46,Rosewood Offices,Warszawa,Office building,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T19:43:00Z
+c920bd5e-8f65-4140-a73a-29a2e440efcd,Bluewater Office Tower,Warszawa,,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T19:44:00Z
+a9cf7a90-52e7-47dc-bb91-29bd161c7282,Cedar Grove Business Park,Warszawa,Office building,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T19:44:00Z
+ebf78947-0376-4a73-a77e-52d177b08a24,Clearview Business Park,Kraków,Office building,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T19:45:00Z
+6a64fd94-d7ff-41eb-84de-09ed5ce95ff1,Fairway Health Centre,,Public sector,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T19:45:00Z
+6544a2c3-14ad-45a5-a3a0-ff30d323c90b,Kingsbridge Properties,Wrocław,Property manager,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T19:46:00Z
+42277fcf-8442-42b3-ab6b-c1d20f2842f9,Goldcrest Sports Hall,Wrocław,Public sector,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T19:47:00Z
+113fc05b-adb2-48f6-9256-a57a0b48a33f,Maplewood Property Management,Wrocław,Property manager,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T19:47:00Z
+1ae46515-2c62-4869-8c60-85b91dac99d7,Pinecrest Business Park,Warszawa,Office building,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T19:48:00Z
+fb9fa549-508e-4abb-9e4e-3c2275a90a8f,Ironbridge Sports Hall,Wrocław,,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T19:49:00Z
+54f9c69a-40d1-4aa3-a4a0-faba6aa1fc69,Oakridge Property Management,Łódź,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T19:51:00Z
+2999ba89-6aa7-4d93-a618-0d95b4026e3f,Summit Real Estate,Warszawa,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T19:51:00Z
+1fe738b0-2cc6-46b9-ad6b-af34440612d0,Ashford Suites,Poznań,,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T19:53:00Z
+0eaa1e54-da07-47a7-a57e-f99284cb61ce,Juniper Office Tower,Poznań,Office building,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T19:53:00Z
+c3b96e7c-b0fd-49e4-9cc1-46adfec75cbc,Riverside Housing Cooperative,Poznań,Housing cooperative,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T19:54:00Z
+f7be335b-d9a0-4dfa-8a07-8a6e6ad93fed,Bluewater Property Management,Gdańsk,Property manager,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T19:55:00Z
+25a6c848-15af-4221-ba33-5dd4acbe2523,Highland Offices,Warszawa,Office building,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T19:55:00Z
+9c46659a-a4c7-444b-9ada-b11b7f0d9ca1,Oakridge Business Park,Szczecin,Office building,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T19:55:00Z
+587b0e79-1f47-4672-9f8d-5f0eed3651ca,Westbrook Business Park,Warszawa,Office building,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-01-01T19:55:00Z
+ae645a7c-d7d5-4e95-a487-493f79670b0c,Greenfield Properties,Wrocław,Property manager,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T19:57:00Z
+ad38a6df-fa27-4219-979d-32cdf0481a07,Harborview Business Park,Wrocław,Office building,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T19:57:00Z
+abb70189-35c0-489d-bff8-7f29613c0e38,Queensgate School,Szczecin,Public sector,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T19:57:00Z
+ed196ce2-7fd8-4adb-99aa-b31b88a1e792,Willowbank Office Tower,,,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-01-01T19:57:00Z
+b618e1b8-67d3-497b-8175-ba844e904084,Birchwood School,Kraków,Public sector,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T19:58:00Z
+7e9e1c5a-33c2-4d99-aaae-a5b81a82fae4,Greenfield Property Management,Szczecin,,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T19:58:00Z
+43b2e514-ed40-4c19-8207-d41551a82f1b,Kingsbridge Offices,Szczecin,,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T19:59:00Z
+65116517-64c2-4675-965c-a6782a47c6f8,Norwood Residents Cooperative,Lublin,Housing cooperative,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T19:59:00Z
+bc55705b-c921-422a-92d1-20987a705118,Summit Residents Cooperative,Lublin,Housing cooperative,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T20:00:00Z
+d01921c2-905d-4843-a0ed-2459a30bbe51,Clearview Real Estate,Gdańsk,Property manager,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T20:01:00Z
+1675238a-8018-4bf5-ac60-6789d7226b05,Birchwood Real Estate,Szczecin,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T20:02:00Z
+2bb4ca49-c1e8-4320-98ef-8fb08c46c383,Parkside Property Management,,Property manager,b5e654fa-1967-4658-ada1-34aa245501b1,2025-01-01T20:03:00Z
+75329f52-c0bd-4d5e-b2e6-efe7c0f44037,Eastwood Residents Cooperative,Łódź,Housing cooperative,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T20:04:00Z
+dfd3408d-4336-4216-b09b-6a3aba877c28,Queensgate Real Estate,Poznań,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T20:06:00Z
+621d644d-9d39-4f5c-b009-9d1ba13c7ef3,Highland Properties,Warszawa,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T20:07:00Z
+f6e8516c-ecbf-402b-a226-77a144af7938,Cedar Grove Housing Association,,Housing cooperative,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T20:08:00Z
+ee1efa2c-f363-463d-b906-069cf4a096fa,Fairway Office Tower,Łódź,Office building,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T20:08:00Z
+35ff1d9e-ce50-4ef4-bdc1-a8cd65ca8032,Rosewood Estates,Kraków,Property manager,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T20:09:00Z
+08b6ae5f-661e-42a2-884b-3e94ff4fd1f4,Hillcrest Offices,Warszawa,,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T20:10:00Z
+1324d248-2a28-4010-a6e3-3570d6530735,Brightway Housing Cooperative,Poznań,Housing cooperative,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T20:12:00Z
+76355312-3e43-45dc-87ff-c5161a25a69d,Moorland Business Park,Kraków,Office building,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T20:12:00Z
+223e6f6e-9bc3-4303-9a34-493ffb77c04d,Pinecrest Offices,Gdańsk,Office building,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T20:12:00Z
+260f20a3-9fd7-48fd-92fd-757ce6245384,Parkside Office Tower,Kraków,Office building,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T20:13:00Z
+88986909-997c-4998-b961-9350b4dc13d0,Rosewood City Library,Warszawa,Public sector,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T20:13:00Z
+ad69682a-1ff7-4ceb-aad0-7d68fc15e1b1,Silverline Estates,Łódź,Property manager,b5e654fa-1967-4658-ada1-34aa245501b1,2025-01-01T20:14:00Z
+1f2c450c-9600-4fb0-ab46-4401462c7aa2,Millstone Property Management,Warszawa,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T20:15:00Z
+c2e8901d-fb1b-418e-a328-30cc7e21dd45,Sunfield Health Centre,Kraków,Public sector,b5e654fa-1967-4658-ada1-34aa245501b1,2025-01-01T20:15:00Z
+cd62ccff-e854-434a-bee6-c661d422c2e6,Summit Office Tower,Lublin,Office building,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T20:16:00Z
+8e745aad-d45d-4440-a44f-5d60b2a0426e,Queensgate Residents Cooperative,Wrocław,Housing cooperative,b5e654fa-1967-4658-ada1-34aa245501b1,2025-01-01T20:17:00Z
+2bbfcb21-18e4-46e3-a965-800ffd2977a5,Copperfield Housing Association,Warszawa,,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T20:18:00Z
+e402b659-3862-4c41-ba9d-fd41f70e8b4f,Northgate Real Estate,Warszawa,Property manager,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T20:18:00Z
+244ae834-0e2f-4ec1-92ca-41ee99ea5564,Oakmont Business Park,,Office building,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T20:18:00Z
+3c32ec4f-ee43-49ee-8a3d-d8c8021cd763,Hillcrest Housing Cooperative,Wrocław,,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T20:19:00Z
+24ac8a96-2535-4bde-bc94-4f4bb61af5da,Harborview Suites,Kraków,Hotel,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T20:20:00Z
+40d31626-2e7d-4381-99c0-16c394f688cd,Bluewater Housing Association,Gdańsk,Housing cooperative,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T20:21:00Z
+16bc3d62-b92e-4696-b036-2945476ca06e,Juniper Hotels,,Hotel,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T20:22:00Z
+a9adc051-cc20-40bf-8b5b-3590b09a79fd,Goldcrest Real Estate,Warszawa,Property manager,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-01-01T20:24:00Z
+6e1f3183-2f15-447e-b99f-fe56fa232394,Queensgate Property Management,Warszawa,,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-01-01T20:26:00Z
+02b27dc1-f536-4ad5-a28c-6cc7f8653527,Queensgate Properties,Warszawa,,b5e654fa-1967-4658-ada1-34aa245501b1,2025-01-01T20:27:00Z
+60182133-11d1-4f3c-8848-f0cb4edecaf1,Summit Properties,Gdańsk,Property manager,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T20:28:00Z
+5a8ce6b0-8605-4b98-9391-7fd4d08c3e19,Oakmont Estates,Warszawa,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T20:30:00Z
+2f951e2b-666c-4c78-9809-d6f98998fdbb,Millstone Hotels,Wrocław,Hotel,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T20:31:00Z
+c3719631-04c4-46e7-8f86-051d292808d3,Summit Property Management,Łódź,Property manager,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T20:31:00Z
+48a86159-efe9-490d-8e2e-6f7efeb43d3a,Oakridge Office Tower,Kraków,Office building,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T20:32:00Z
+d25ce053-0499-41ca-87df-263b422a0c33,Lakeside Estates,Szczecin,,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T20:35:00Z
+3150bb82-c676-4d65-8681-d6e8a84b9222,Parkside Offices,Łódź,Office building,b5e654fa-1967-4658-ada1-34aa245501b1,2025-01-01T20:35:00Z
+cc5d98ea-d48c-4010-98f0-1bb68f75eaaa,Bluewater School,Łódź,Public sector,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T20:37:00Z
+541392e9-eb44-4c74-8a49-1af150438de4,Fairway Housing Cooperative,Szczecin,,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T20:37:00Z
+40b8b879-33c4-4015-aee2-4737c580a610,Millstone Real Estate,Wrocław,Property manager,b5e654fa-1967-4658-ada1-34aa245501b1,2025-01-01T20:38:00Z
+6b1cea33-2468-4ed3-a472-426cbad64338,Summit Health Centre,Kraków,,b5e654fa-1967-4658-ada1-34aa245501b1,2025-01-01T20:38:00Z
+9e40592f-9ebe-4bc5-b041-bb3d39bd26c7,Meadowbrook Suites,Warszawa,Hotel,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-01-01T20:39:00Z
+62d10747-ccea-4ef0-b670-06322abb7989,Oakmont Real Estate,Warszawa,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T20:39:00Z
+2c5b178d-d9ae-4bb1-9bdd-ae0ae3e06ae4,Thornbury Estates,Warszawa,Property manager,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T20:40:00Z
+2785785a-bb6a-4292-880c-cef24d387b3b,Juniper Plaza,Lublin,Office building,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T20:41:00Z
+e0abedf4-ad62-4274-8c55-ea81c7197cce,Riverside Estates,Łódź,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T20:43:00Z
+b535b9de-4391-4117-bf02-8cb302e65c04,Copperfield Estates,,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T20:44:00Z
+a61366c7-7db1-4633-a596-438a6d5835d3,Pinecrest Property Management,Gdańsk,Property manager,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T20:44:00Z
+46a4700b-0bd2-4d7d-afb8-17329896df06,Copperfield Property Management,Warszawa,Property manager,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T20:45:00Z
+3a5ba54d-620a-4a97-8fef-71f74adb2614,Sunfield Office Tower,Łódź,Office building,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-01-01T20:46:00Z
+d11a5ee4-c13c-43a5-87e5-ea26ba3f8c21,Thornbury Offices,Kraków,Office building,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T20:46:00Z
+6562e997-7410-4a43-8cdb-674378e34fb9,Sunfield Business Park,Gdańsk,Office building,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T20:47:00Z
+3d18b4f4-e67a-4815-b45e-3e53dafee41b,Thornbury Plaza,Warszawa,Office building,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T20:47:00Z
+d6a8c414-de0d-477b-ad74-6d141bdcb90a,Kingsbridge Housing Association,Warszawa,Housing cooperative,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T20:48:00Z
+a5eecbb3-f5ba-4395-a70d-213eba8f665c,Parkside Business Park,Wrocław,Office building,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T20:48:00Z
+bf259d30-0930-4e06-80a1-4881ac4bb24f,Copperfield Business Park,Łódź,Office building,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T20:49:00Z
+268c9372-8bac-4851-a9f0-89fcc1fa4166,Silverline Real Estate,Gdańsk,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T20:49:00Z
+c16d3516-3473-4b16-be16-286a2b896d5e,Goldcrest Office Tower,Poznań,Office building,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T20:50:00Z
+20cdd503-534a-4c9a-a436-5d9002d8d70a,Parkside City Library,Warszawa,,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T20:50:00Z
+ef3c8b03-1ac5-4be5-93ab-725c3a6d83ba,Rosewood Real Estate,Warszawa,,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T20:50:00Z
+d41bf735-e21c-470f-9875-880b1c5ffdf0,Thornbury Suites,Kraków,Hotel,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T20:50:00Z
+23454d5a-9fbe-4547-9363-8e37d50093c5,Willowbank Plaza,Wrocław,Office building,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T20:50:00Z
+426328cc-e6a8-493e-83d6-afbd04633b2c,Ironbridge Housing Association,,Housing cooperative,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-01-01T20:51:00Z
+4b100f48-9ec5-4d10-abcb-3fedd5316577,Thornbury Housing Association,Wrocław,Housing cooperative,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T20:52:00Z
+6f8d325f-f899-4701-b86a-68184f2b5805,Maplewood Plaza,,Office building,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T20:53:00Z
+22ea949c-3492-49fc-a955-005a651b9b44,Queensgate Hotels,Wrocław,Hotel,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T20:53:00Z
+1a1770af-c022-4970-b887-8e373ebf4f0e,Rosewood Hotels,Warszawa,Hotel,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T20:53:00Z
+8ace80a6-c458-41eb-9196-588bacd987e8,Cedar Grove Office Tower,Kraków,,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T20:54:00Z
+083a8084-b6a6-4c58-902f-aa9343dc9d27,Ironbridge Property Management,Poznań,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T20:54:00Z
+5fd58740-8611-42e9-95e7-8d901a8c8773,Silverline Housing Cooperative,Wrocław,Housing cooperative,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-01-01T20:56:00Z
+4ab44eaa-b6bd-461a-87d2-266e34eba19f,Riverside Properties,Gdańsk,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-01T20:57:00Z
+57c3c474-d6a2-4b20-8739-2f6bb04e9eb6,Summit Housing Cooperative,Warszawa,Housing cooperative,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-01T20:57:00Z
+5f9811a7-8e65-4556-9dbe-14ffa37357b4,Linden Residents Cooperative,Szczecin,Housing cooperative,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-01-01T20:58:00Z
+19bc5c7e-d637-455b-b087-e69995e31386,Linden Health Centre,Kraków,Public sector,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-01T20:59:00Z
+c5bb5395-c48b-40a8-9354-cbf753e6ac07,Ashford Plaza,Warszawa,Office building,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-14T15:55:00Z
+d66295d0-dd0a-416b-bfba-8c255d61c649,Harborview Estates,,Property manager,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-15T09:18:00Z
+6fe4b87e-8e52-4494-b043-0eff7a093d1b,Northgate Housing Cooperative,Gdańsk,Housing cooperative,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-15T12:12:00Z
+5821d604-e1ae-4933-bada-efcf14224c49,Highland Office Tower,Warszawa,Office building,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-16T11:11:00Z
+50c057da-1c08-4973-af7d-211f57d3e5f3,Oakmont Housing Association,Warszawa,Housing cooperative,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-01-20T10:05:00Z
+54be0db5-d392-46a7-974d-414d4d3419ba,Birchwood Housing Association,Warszawa,Housing cooperative,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-20T10:39:00Z
+4a95dc58-7c73-46af-b8c2-ff6cf35b03c7,Goldcrest Residents Cooperative,Lublin,Housing cooperative,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-24T14:19:00Z
+121f7906-ef80-43d6-a7e2-50c39360f127,Bluewater Real Estate,Łódź,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-26T15:56:00Z
+2b4fa541-fd4a-4b0f-ac75-453aaf5f6757,Ironbridge Offices,Wrocław,,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-01-27T07:20:00Z
+39ab8a23-1ea0-4941-9dfd-ad58b8d4ab2f,Fairway Offices,Szczecin,,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-01-29T10:22:00Z
+49dfdc2b-68b6-45f3-a250-70c2ecd49bf6,Northgate Properties,Warszawa,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-02-03T07:46:00Z
+5ae1c7f1-fae4-444f-84ba-cec11b698545,Millstone Properties,Gdańsk,,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-02-03T09:48:00Z
+af756100-c4ce-4827-9be7-ffdbe1d0bae5,"Harborview Offices, Block B",Kraków,Office building,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-02-03T14:26:00Z
+9e12d895-28b4-4280-9524-c17d68bf1378,Eastwood Hotel,Warszawa,Hotel,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-02-11T07:54:00Z
+9008343f-069a-474c-9ac2-19758c1df11e,Meadowbrook Hotel,Wrocław,Hotel,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-02-12T07:43:00Z
+16415159-6261-4f42-b29b-5248e0222e6c,Bluewater Properties,,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-02-14T15:05:00Z
+3de236c6-e064-4995-a396-f32ddb95a778,Meadowbrook Property Management,,Property manager,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-02-17T09:32:00Z
+499b2e34-5b87-41fd-890d-cde93264eeae,Oakmont Health Centre,Warszawa,,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-02-18T15:12:00Z
+89dfdb44-acf5-4e7b-b036-3385f1d7221a,Parkside Housing Cooperative,Gdańsk,Housing cooperative,b5e654fa-1967-4658-ada1-34aa245501b1,2025-03-04T13:16:00Z
+fbf47596-34d8-4ff5-83b3-522af2187abd,Lakeside Office Tower,Szczecin,Office building,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-03-06T07:51:00Z
+989a44bc-54c5-4898-979c-d10bbf1e80f2,Birchwood Business Park,Kraków,Office building,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-03-07T07:46:00Z
+d6813c6e-a4a0-4caa-8cac-1025b6aa3601,Sunfield Estates,Warszawa,Property manager,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-03-10T11:01:00Z
+3553ad83-0d61-4bd4-acab-4fc4f7b7125c,Juniper Property Management,,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-03-12T12:54:00Z
+b204c0a5-3df2-4f34-974a-983d0642f038,Stonehill Offices,,,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-03-14T10:44:00Z
+b32c02e1-ebe6-4f4e-9550-eb5d24511d7a,Moorland Estates,Warszawa,Property manager,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-03-14T12:36:00Z
+53285846-4d32-4694-a962-3c469979fab2,Willowbank Suites,Łódź,,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-03-14T12:56:00Z
+f76233a9-8d76-465d-9dac-c07d06df0a82,Riverside Hotel,Warszawa,Hotel,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-03-17T08:53:00Z
+330ee10b-588b-4517-8bec-635475eda071,Riverside Office Tower,Kraków,Office building,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-03-17T09:51:00Z
+a06be992-7bfa-419f-b85f-c2e49299a5ce,Parkside Real Estate,Łódź,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-03-17T15:34:00Z
+bd01980a-c4b1-4c95-a172-9014d9b830c5,Parkside Suites,Wrocław,Hotel,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-03-21T11:55:00Z
+cfb00008-6060-48ae-bc5a-e22bb4b33b44,Norwood Health Centre,Warszawa,Public sector,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-03-21T14:37:00Z
+8c2f4e9c-93cb-4538-bf80-43b117e1af9d,Linden Properties,Kraków,,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-03-26T13:25:00Z
+67dba1dd-8ef5-4a3b-8c76-18bb1978e280,Goldcrest Estates,Kraków,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-03-29T22:20:00Z
+a51bb05b-6596-49b1-8947-b98b5295b713,Ashford Estates,Warszawa,Property manager,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-03-30T22:10:00Z
+f04d5007-16e8-4767-bd71-608432724851,Maplewood Housing Association,Poznań,,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-03-31T12:21:00Z
+868a5abf-0664-4dc5-86ab-00c0d6983e10,Linden School,Lublin,Public sector,b5e654fa-1967-4658-ada1-34aa245501b1,2025-04-01T13:14:00Z
+abde7d4a-b376-4128-afca-27ccfe91c328,Riverside Property Management,,,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-04-04T07:32:00Z
+4f2c5518-da59-44d6-9568-b50d5ae9b1ca,Highland Real Estate,Szczecin,Property manager,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-04-07T14:06:00Z
+639067f7-8111-44d7-aa96-7940473a90ff,Lakeside Housing Cooperative,,Housing cooperative,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-04-08T11:16:00Z
+7e84889e-1dd1-410a-a218-faab48ec8970,Silverline Housing Association,Warszawa,Housing cooperative,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-04-09T13:49:00Z
+eaf99f27-d3a2-4672-a448-7e2643b45bdb,Copperfield Residents Cooperative,Wrocław,Housing cooperative,b5e654fa-1967-4658-ada1-34aa245501b1,2025-04-10T14:15:00Z
+1033ce0a-d146-4ce0-909d-c53f568b743b,Greenfield Estates,Lublin,Property manager,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-04-17T11:36:00Z
+ac2cb995-e74c-4ec5-847c-99632ee0255e,Millstone Health Centre,Warszawa,Public sector,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-04-18T12:55:00Z
+3a7cc456-b3f9-4038-9c42-04f7463880e5,Norwood Hotel,Poznań,Hotel,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-04-25T08:48:00Z
+2e4c305b-dae0-4a84-9b36-0a39c949b18b,Redwood Property Management,Warszawa,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-04-25T12:34:00Z
+877feb11-73a5-41df-ac7f-5fd20d102542,Northgate Health Centre,Wrocław,Public sector,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-04-25T14:55:00Z
+e772c284-3922-41b8-a457-efa4fb4f0cba,Eastwood Property Management,Łódź,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-05-01T11:11:00Z
+9ad58ec8-353b-46d1-aaa8-83c62a837c49,Clearview Properties,Łódź,,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-05-06T12:05:00Z
+d89f98cd-2b5d-42ce-91e4-5ef426f04584,Oakmont Office Tower,Wrocław,Office building,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-05-08T06:39:00Z
+818c899a-602c-4db9-bab5-728feb7a2174,Silverline Office Tower,Warszawa,Office building,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-05-09T10:41:00Z
+81b8547d-69ea-48c0-9eb6-22b8f431b38c,Riverside Real Estate,Poznań,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-05-09T12:11:00Z
+5e2bda77-3bff-4940-81e3-f44800bf7c03,Summit Hotels,Kraków,Hotel,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-05-13T11:03:00Z
+5a3ad566-a4d4-4d7c-9e26-b3ac6792ecc1,Sunfield Hotels,Poznań,Hotel,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-05-14T10:12:00Z
+08b0f106-3dfd-49bb-b713-e59d1a2957bd,Linden Business Park,Warszawa,,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-05-15T08:00:00Z
+95e5e5b8-bd42-4cae-a1f9-cba938b1c6ae,Greenfield School,Wrocław,Public sector,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-05-15T13:14:00Z
+5d95c8ff-df09-4994-bf57-fb12eca32e49,Meadowbrook Real Estate,Warszawa,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-05-21T09:53:00Z
+4054886e-97bf-4730-bedb-a5aefa6da4ed,Rosewood Housing Association,Warszawa,Housing cooperative,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-05-21T14:16:00Z
+f513ee32-1953-4f99-a6a4-87de73ef7afd,Redwood Plaza,Kraków,Office building,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-05-22T14:54:00Z
+ffd7b653-216e-4179-b650-4e6c7d860941,Goldcrest Housing Association,Kraków,,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-05-27T15:00:00Z
+56fb9a7f-2b60-451a-befe-ae9a7f81d8b9,Eastwood Real Estate,Kraków,Property manager,b5e654fa-1967-4658-ada1-34aa245501b1,2025-05-28T08:57:00Z
+5f157dce-e8f8-4e6d-a704-5f62070a3209,Harborview Real Estate,Łódź,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-06-04T12:45:00Z
+312a0c1e-d5c2-4175-8b27-e4896eb193b9,Millstone Housing Cooperative,Wrocław,,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-06-06T07:45:00Z
+de9286cc-0429-4a57-923c-cf40b2f7a63c,Ironbridge Health Centre,Poznań,,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-06-10T07:33:00Z
+6d7cf13f-2f05-4150-9f56-d96085db4224,Northgate Residents Cooperative,Gdańsk,Housing cooperative,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-06-10T10:15:00Z
+0b0b75fc-894e-44b7-8d16-0e40ed1f240f,Millstone Hotel,Szczecin,Hotel,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-06-12T12:55:00Z
+a069058b-68f9-4d1b-8153-ac269c590358,Rosewood Plaza,Lublin,Office building,b5e654fa-1967-4658-ada1-34aa245501b1,2025-06-14T07:45:00Z
+df6833c4-afd3-4836-b3cd-5970ad7f3f69,Meadowbrook Plaza,Warszawa,Office building,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-06-16T08:21:00Z
+666ffbaf-49ce-476a-9bc6-b8f9e7d9308e,Copperfield Real Estate,,Property manager,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-06-25T13:41:00Z
+a55e0d8f-1549-4207-a324-c18dcbfa74ff,Copperfield Housing Cooperative,Wrocław,Housing cooperative,01e0e14a-2686-4242-bcfc-09adbec4cd6e,2025-06-26T14:14:00Z
+95a48e4a-f0ce-40b6-a487-a3c1164c6143,Lakeside Real Estate,Gdańsk,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-07-03T09:47:00Z
+bb2804ed-3973-4a7b-a162-fb3f453c6205,Fairway Real Estate,Szczecin,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-07-15T08:00:00Z
+d8a15818-5733-41af-b85e-1c7aa51e0a6c,Norwood Property Management,Warszawa,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-07-15T09:29:00Z
+793415b6-e1da-4592-9c94-48381da1c87b,Norwood Estates,Gdańsk,Property manager,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-07-21T13:29:00Z
+2cc8a6a7-bfd8-4ba0-98ce-2db5d63b5ca8,Maplewood Residents Cooperative,Łódź,,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-07-22T12:21:00Z
+2835e7cd-3c33-45b7-846b-ae62cc34ac02,Clearview City Library,Kraków,,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-07-30T08:42:00Z
+2402954d-9c5b-4c9d-ba49-bbf23a68e305,Birchwood Property Management,Gdańsk,Property manager,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-07-31T10:41:00Z
+3bc16163-0ac3-4c0b-9881-ba8ce147aae5,Greenfield Health Centre,Lublin,Public sector,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-08-01T09:36:00Z
+1955ef02-4227-424b-b3df-4444f17713e9,Cedar Grove Plaza,,Office building,b5e654fa-1967-4658-ada1-34aa245501b1,2025-08-07T06:12:00Z
+92ec6fdc-136c-4516-b83f-a0a781e67995,Copperfield Health Centre,Warszawa,Public sector,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-08-11T08:50:00Z
+c9178ed4-f770-47a7-aca4-db5344ee4991,Pinecrest Plaza,Kraków,,b5e654fa-1967-4658-ada1-34aa245501b1,2025-08-12T13:09:00Z
+9006d0bd-e6f9-4ae6-b159-4982b876b6b1,Thornbury Properties,Kraków,Property manager,b5e654fa-1967-4658-ada1-34aa245501b1,2025-08-18T10:55:00Z
+7135ba63-addd-4c0b-9cd8-e5811d3ba0ea,Hillcrest Properties,,Property manager,b5e654fa-1967-4658-ada1-34aa245501b1,2025-08-18T12:18:00Z
+253e3182-e7cc-4358-b60a-7553a3acf292,Meadowbrook Estates,Warszawa,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-08-21T14:56:00Z
+5ce67ca5-71e3-4ea9-a90c-fcdf7299e091,Brightway Real Estate,Kraków,Property manager,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-08-22T07:06:00Z
+bfc88521-2873-4028-9968-ba09fbe61479,Cedar Grove Health Centre,Kraków,Public sector,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-08-26T09:09:00Z
+4ff6b499-0e52-4c77-a89b-89ca178c27d7,Riverside Plaza,Poznań,,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-08-27T08:39:00Z
+92a3ca76-3eca-4f11-9ebf-31974808c34c,Bluewater Hotels,Warszawa,Hotel,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-08-27T14:30:00Z
+74d83054-4489-430d-a47e-d582df691d0a,Pinecrest Health Centre,Warszawa,Public sector,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-08-27T14:53:00Z
+180b12c1-0e9f-41e7-9840-2c0e9fd88a34,Brightway School,Łódź,Public sector,b5e654fa-1967-4658-ada1-34aa245501b1,2025-08-29T06:39:00Z
+58f30d1b-3f81-4e58-baf2-97be5fe8be4e,Thornbury City Library,Kraków,Public sector,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-09-01T07:59:00Z
+2bf46873-88fc-4960-8a9b-a8b11b7c448b,Fairway Residents Cooperative,Warszawa,,b5e654fa-1967-4658-ada1-34aa245501b1,2025-09-01T08:33:00Z
+8ceecbc4-e3a3-436a-b33b-3ba1dcfd2858,Birchwood Estates,Lublin,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-09-01T11:08:00Z
+94d738ab-f774-49ba-b478-1648f3aaa981,Queensgate Health Centre,Poznań,Public sector,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-09-04T09:54:00Z
+7ca1d907-f18c-4ff4-8c2a-506f39b514be,Maplewood Suites,,,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-09-05T09:38:00Z
+f1adbb87-539e-43ac-b136-5aad65897090,Ashford Residents Cooperative,Warszawa,,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-09-07T14:05:00Z
+c270bcce-0c7b-47da-bbb4-c2176621808b,Greenfield Plaza,Kraków,Office building,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-09-08T07:09:00Z
+8e0223e6-69e8-43f5-a5a1-319f6275e77c,Willowbank Estates,Kraków,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-09-09T09:16:00Z
+09b9bfcf-e299-4e10-abe8-d686ebde9bdf,Queensgate Housing Association,Warszawa,,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-09-10T11:46:00Z
+7042b8cc-6077-4105-91fb-7bf090a1678f,"""Summit"" Housing Cooperative",Warszawa,,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-09-15T06:23:00Z
+28394ccd-82ef-43b2-8c01-a88cc1f410e6,Parkside Estates,Wrocław,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-09-17T08:46:00Z
+fc56fa6a-3502-4914-84e2-a0d8ca3c58d8,Ironbridge Office Tower,Łódź,Office building,b5e654fa-1967-4658-ada1-34aa245501b1,2025-09-25T06:39:00Z
+ff2c08ff-18b6-46cf-ae9e-529d2e6022bb,Fairway Business Park,Szczecin,Office building,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-09-26T07:41:00Z
+e9cee11e-ee09-40d6-94af-2e72fad5118f,Ashford Offices,Gdańsk,Office building,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-09-26T10:59:00Z
+ddf53ea1-eb38-493f-adcd-abfb5d7beacc,Fairway Suites,Warszawa,Hotel,b5e654fa-1967-4658-ada1-34aa245501b1,2025-09-29T10:36:00Z
+23788246-4cfc-4808-a990-392e619dde71,Thornbury Office Tower,,Office building,b5e654fa-1967-4658-ada1-34aa245501b1,2025-10-01T11:05:00Z
+ced66925-5ed2-4c9c-8945-68fbc3416aba,Sunfield School,Warszawa,Public sector,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-10-02T08:18:00Z
+21134aed-39d1-47cf-9043-27e1771db4c7,Norwood Properties,Warszawa,Property manager,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-10-05T06:24:00Z
+a35417cd-0126-4bf6-a29a-cdca7ccb2091,Oakridge Housing Cooperative,Wrocław,Housing cooperative,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-10-09T08:30:00Z
+a3f89d1b-4580-4cb2-b76b-262dc4e7bb69,Juniper Real Estate,Lublin,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-10-14T08:27:00Z
+e9f5f6ad-96ad-4f71-967f-adb6a982698f,Meadowbrook Housing Association,Gdańsk,Housing cooperative,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-10-16T08:17:00Z
+9b33c285-2ed5-4a58-8b72-54518f773d44,Oakmont Housing Cooperative,Gdańsk,,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-10-22T08:44:00Z
+7dbbc82c-d15f-453e-9d33-8b6ad6255a6f,Riverside Hotels,,Hotel,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-10-23T09:15:00Z
+11a9444c-4c7c-44ee-ac63-721d3ba0d1f4,Greenfield Housing Cooperative,Kraków,Housing cooperative,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-10-25T22:40:00Z
+8628cc84-457a-4de2-8e9d-7cb6056b74f4,Oakridge Real Estate,Poznań,Property manager,b5e654fa-1967-4658-ada1-34aa245501b1,2025-10-29T09:26:00Z
+84e3bfb6-547c-4280-bae0-a369275df004,Cedar Grove Estates,Warszawa,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-10-29T11:47:00Z
+05856e48-b89b-4736-b6d3-7d205974e1b9,Summit Estates,Gdańsk,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-10-30T10:25:00Z
+e236896b-6e64-42ba-bfc0-214979e1346e,Westbrook Estates,Łódź,Property manager,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-10-30T14:22:00Z
+2090a857-806f-420c-b2ac-9aa619bdfa3e,Hillcrest Housing Association,,Housing cooperative,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-10-30T15:46:00Z
+7a4edf80-d378-417f-b159-bae8ab907046,Redwood Housing Cooperative,Szczecin,Housing cooperative,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-10-31T14:32:00Z
+cf280685-49db-4ebf-9501-bc46fad2a9b1,Brightway Offices,Kraków,Office building,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-10-31T22:35:00Z
+0bb07b3f-291e-4944-877a-f588e6745392,Millstone School,Gdańsk,Public sector,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-11-03T08:05:00Z
+841f76f1-47d5-48a7-b2bc-3aa137fd58a1,Pinecrest Housing Association,Warszawa,Housing cooperative,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-11-04T12:02:00Z
+4ae6ace7-35a1-4c96-a55f-57030cef7f14,Greenfield Residents Cooperative,Łódź,Housing cooperative,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-11-05T07:28:00Z
+f7e99bed-3abd-46fd-a984-216321572769,Cedar Grove Sports Hall,Wrocław,Public sector,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-11-06T11:55:00Z
+458605d0-77a6-44e7-a8e2-00d56be9639a,Juniper Properties,Łódź,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-11-07T07:01:00Z
+da938929-9916-4a2c-948a-262bb371fb07,Hillcrest Residents Cooperative,Gdańsk,,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-11-09T10:35:00Z
+dc4713d6-6b9b-454f-b190-d8585554b1ca,Pinecrest Office Tower,Łódź,,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-11-11T13:58:00Z
+dcca7491-6c32-47c1-ac6c-dbfa76dc8b80,Summit Plaza,Kraków,Office building,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-11-17T11:30:00Z
+0331c48b-6801-42f4-946f-31efce672358,Northgate Business Park,Poznań,Office building,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-11-17T15:24:00Z
+3dfa5c59-d166-404a-a0f2-54afeb112503,Highland Residents Cooperative,Poznań,,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-11-18T08:41:00Z
+169e90d1-9ef2-46cf-adb5-a01d86d56d75,Highland Sports Hall,Łódź,Public sector,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-11-18T10:18:00Z
+e00d5fc0-db44-4c1a-be6b-550fd680edee,Rosewood Properties,Warszawa,Property manager,b5e654fa-1967-4658-ada1-34aa245501b1,2025-11-19T12:28:00Z
+f6f99e82-414e-4391-99d7-7c25dc14c543,Clearview Residents Cooperative,Gdańsk,Housing cooperative,b5e654fa-1967-4658-ada1-34aa245501b1,2025-11-20T09:36:00Z
+15dd8967-bf59-4a5f-9367-2c06378b89eb,Millstone Office Tower,Warszawa,Office building,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-11-26T12:17:00Z
+c3ba7e89-ac32-4210-ad99-e6fbd2ebe8ef,Queensgate Sports Hall,,Public sector,b5e654fa-1967-4658-ada1-34aa245501b1,2025-11-27T07:08:00Z
+e86ac8e9-3ee6-4b17-ac7e-8d2c6e5a9bf3,Harborview Housing Association,Warszawa,,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-11-28T14:11:00Z
+4f761425-85ab-4098-8ebd-da3e7147314e,Highland Property Management,Lublin,Property manager,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-12-01T08:28:00Z
+43331303-8739-4a5c-8818-3e0d0a99e36c,Eastwood Suites,Łódź,,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-12-01T08:42:00Z
+16c42614-c8ef-47ef-b786-92341669b8a7,Norwood Sports Hall,Gdańsk,Public sector,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-12-01T13:01:00Z
+05fd4323-bfa5-4a52-a6b2-046ac4409f8f,Summit Offices,Lublin,,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-12-03T09:00:00Z
+bc02ab8c-d984-4adf-8f92-a28e6d82ca4a,Lakeside Housing Association,Warszawa,Housing cooperative,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-12-08T14:56:00Z
+ddbdb9b1-6d05-4a9c-b515-9be61f276b0d,Redwood Business Park,Poznań,Office building,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-12-10T14:16:00Z
+3c0e2d38-53b5-4587-abb1-f6d587dfc4d4,Norwood Office Tower,Gdańsk,Office building,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-12-12T12:21:00Z
+6a44a25c-06f2-46fb-9530-1e5c227aa076,Highland Suites,Wrocław,Hotel,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-12-15T07:55:00Z
+6cffd50e-04c7-48f1-8347-4c7691b9f98c,Eastwood Offices,,,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-12-15T09:42:00Z
+e64c3620-6b36-4f37-b391-ba7a630035f7,Harborview Hotel,Kraków,Hotel,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-12-16T12:41:00Z
+0b299734-eacb-40c4-9c52-2cd1c0d82ae9,Norwood Plaza,Lublin,Office building,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-12-17T14:39:00Z
+53cb1f40-8714-42bd-a32e-8e39666535e9,Juniper Sports Hall,Wrocław,Public sector,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-12-18T07:51:00Z
+0b067259-1b50-4a60-93ff-9d86dcda6525,Ashford Real Estate,Warszawa,,b5e654fa-1967-4658-ada1-34aa245501b1,2025-12-19T15:45:00Z
+2ad971d9-7e34-4b9e-ac84-66f72c56672c,Queensgate Suites,Poznań,Hotel,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2025-12-25T15:42:00Z
+c54cc0b2-852a-4c27-ba71-8b5758d32efc,Clearview Housing Association,,Housing cooperative,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2025-12-26T11:45:00Z
+a275be7d-e0a0-4c9d-87d5-175ab92992f3,Ashford Business Park,Szczecin,Office building,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-12-28T07:43:00Z
+6359d120-187c-4166-93e3-299b8f9be842,Westbrook Hotel,Warszawa,Hotel,5f1b33e6-8340-430d-bd6b-b76319bcb720,2025-12-30T11:01:00Z
+53569ddc-d78e-4c25-8e25-f6505d9fb0b1,Ironbridge Properties,Gdańsk,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2025-12-31T23:50:00Z
+f5b6d4c8-1326-46aa-9e61-4e3f3b4abf1b,Fairway Properties,Warszawa,Property manager,5f1b33e6-8340-430d-bd6b-b76319bcb720,2026-01-02T08:52:00Z
+0f90fdf3-9395-4636-8dc5-fa6333625df8,Northgate Suites,Poznań,Hotel,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2026-01-02T13:20:00Z
+89ddaabd-6490-45d6-9978-ac0cd7d68503,Westbrook Plaza,Szczecin,Office building,5f1b33e6-8340-430d-bd6b-b76319bcb720,2026-01-05T07:47:00Z
+4054126c-018f-45f3-9579-71020cb170e6,Eastwood Health Centre,Łódź,,b5e654fa-1967-4658-ada1-34aa245501b1,2026-01-08T13:28:00Z
+ad377619-68ef-46a9-9e33-c4061a3141b9,Westbrook Offices,Kraków,Office building,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2026-01-13T15:37:00Z
+61a15198-394c-4d46-b7b2-dfb3cec80732,Highland Estates,Lublin,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2026-01-14T07:31:00Z
+f73effa8-95c7-444f-bb45-33372149571f,Stonehill Office Tower,Łódź,Office building,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2026-01-25T07:53:00Z
+8468f3ee-3621-46d4-be19-a6337f829b42,Westbrook City Library,,Public sector,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2026-01-26T12:27:00Z
+8132c24d-b20b-4ad1-b2d1-4dbbda6fc9c8,Copperfield Hotel,Kraków,Hotel,b5e654fa-1967-4658-ada1-34aa245501b1,2026-01-31T12:52:00Z
+5af292ee-2d32-4178-bbf8-bf32c2e5b702,Northgate Estates,,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2026-01-31T23:15:00Z
+9d576c2f-a947-48d7-92f7-fad0c891ed40,Brightway Suites,Warszawa,Hotel,5f1b33e6-8340-430d-bd6b-b76319bcb720,2026-02-04T11:51:00Z
+8c328088-11d3-4aee-8052-9a928fa4d2e9,Copperfield Suites,Gdańsk,Hotel,5f1b33e6-8340-430d-bd6b-b76319bcb720,2026-02-06T07:37:00Z
+557d2a50-6440-4cb7-a876-2f8c1dee6d09,Willowbank Property Management,Warszawa,Property manager,5f1b33e6-8340-430d-bd6b-b76319bcb720,2026-02-06T07:39:00Z
+bf1c1c27-b875-43f1-9e4f-2b2836bfbd04,Sunfield Properties,Warszawa,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2026-02-08T13:34:00Z
+7f10733b-fd60-4a8e-8d3f-08242a39e236,Parkside Plaza,Łódź,Office building,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2026-02-16T08:00:00Z
+a3c27dbb-f093-4a85-ae51-7b0179a8f6b9,Northgate City Library,Warszawa,Public sector,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2026-02-19T08:03:00Z
+c3a96b4e-36f5-4060-bdaf-9994a51d32e5,Sunfield Real Estate,Łódź,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2026-02-20T12:48:00Z
+e8f52532-c0a0-4921-adaf-fc038e3a6f08,Rosewood Business Park,Kraków,,5f1b33e6-8340-430d-bd6b-b76319bcb720,2026-02-22T15:27:00Z
+ce3de119-c875-4d2e-ae57-7250bfa39246,Goldcrest Properties,Warszawa,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2026-02-24T12:47:00Z
+4a240347-404a-4246-b414-4b292de9e91f,Thornbury Residents Cooperative,Warszawa,,c368b428-6bdd-493c-a64f-a482a80a08d5,2026-02-26T15:14:00Z
+8ad793cd-2028-431f-b2e7-eed36a678d7f,Oakridge Housing Association,Poznań,Housing cooperative,5f1b33e6-8340-430d-bd6b-b76319bcb720,2026-02-26T15:27:00Z
+5750b6ab-52e6-46bd-8d64-d80e06b7f01b,Goldcrest Property Management,Warszawa,Property manager,5f1b33e6-8340-430d-bd6b-b76319bcb720,2026-02-27T12:46:00Z
+8e19fdad-a0b6-495e-acd8-6f408e7e2a8a,Linden Estates,Kraków,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2026-03-06T15:04:00Z
+b011e077-aeb4-42fb-b8f3-17d106ad18ba,Ironbridge Housing Cooperative,Łódź,Housing cooperative,5f1b33e6-8340-430d-bd6b-b76319bcb720,2026-03-09T08:29:00Z
+4bc19b87-407e-4246-b44f-629fbd1e4f06,Moorland Offices,Poznań,Office building,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2026-03-09T15:07:00Z
+542e1472-fead-442c-a2f1-7b79368de758,Meadowbrook Housing Cooperative,Warszawa,Housing cooperative,c368b428-6bdd-493c-a64f-a482a80a08d5,2026-03-10T15:50:00Z
+d5ad71b0-1156-4ac3-bad0-8b081061734f,Stonehill Housing Cooperative,Warszawa,Housing cooperative,b5e654fa-1967-4658-ada1-34aa245501b1,2026-03-13T07:52:00Z
+25c20b05-ff2a-4761-936c-2e55d49bf86c,Pinecrest Real Estate,Warszawa,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2026-03-13T12:32:00Z
+2505bd26-6658-4da8-8cd6-3d123e9a1617,Redwood Office Tower,,Office building,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2026-03-17T08:27:00Z
+0e65495f-d306-4ed4-861e-3a0a0bf2b7ca,Queensgate Offices,Kraków,Office building,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2026-03-17T09:17:00Z
+06a6b537-dc29-4c12-9477-100ca2a6d905,Queensgate Business Park,Szczecin,Office building,5f1b33e6-8340-430d-bd6b-b76319bcb720,2026-03-26T12:17:00Z
+6d0f428c-97ec-4f55-ba23-93234510155f,Queensgate Housing Cooperative,Szczecin,Housing cooperative,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2026-03-29T22:45:00Z
+679a017d-2709-494b-b327-9deee3854c38,Ironbridge School,Kraków,Public sector,b5e654fa-1967-4658-ada1-34aa245501b1,2026-03-31T14:47:00Z
+a2f4e5ae-978b-48d8-96d1-163793101cd1,Moorland Property Management,Warszawa,,5f1b33e6-8340-430d-bd6b-b76319bcb720,2026-04-03T11:00:00Z
+f2cffc11-3dc2-48d0-b79d-3c47286884f7,Redwood Hotels,Gdańsk,Hotel,5f1b33e6-8340-430d-bd6b-b76319bcb720,2026-04-08T11:30:00Z
+9474c8b0-8d2a-4544-9334-b46f9978f525,Bluewater Estates,Kraków,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2026-04-08T14:49:00Z
+d7a1650f-9063-48e4-902f-64db7fe46fe2,Meadowbrook Properties,Lublin,Property manager,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2026-04-09T12:18:00Z
+dc180cc1-b79f-4bcb-acf0-b142483ce519,Brightway Plaza,Wrocław,Office building,b5e654fa-1967-4658-ada1-34aa245501b1,2026-04-15T06:10:00Z
+324a3851-6497-4500-b857-da52a18ae95a,Linden Plaza,Gdańsk,Office building,5f1b33e6-8340-430d-bd6b-b76319bcb720,2026-04-21T07:15:00Z
+3bdf7d64-e198-43c7-99fe-25025198d38c,Clearview Estates,Łódź,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2026-04-27T09:11:00Z
+fdc25c50-6370-4c0a-802f-ba6879cfac66,Linden Housing Association,Gdańsk,Housing cooperative,c368b428-6bdd-493c-a64f-a482a80a08d5,2026-04-28T09:34:00Z
+b5ba13e2-892f-432a-80d7-2faf035495fb,Redwood Offices,Poznań,Office building,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2026-05-06T10:53:00Z
+aaa8d462-6227-4b71-8cc2-26e76f0efc3a,Birchwood Residents Cooperative,Poznań,Housing cooperative,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2026-05-10T13:38:00Z
+4b9d5906-832a-4ad3-b09f-0dc1bad32eb1,Copperfield Properties,Kraków,Property manager,5f1b33e6-8340-430d-bd6b-b76319bcb720,2026-05-18T07:05:00Z
+1d99e559-55aa-490c-a52a-b8f5d36373f4,Maplewood Properties,Wrocław,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2026-05-19T13:35:00Z
+c885c9a8-0375-4e8f-b768-ab1890457aca,Queensgate Plaza,Warszawa,Office building,5f1b33e6-8340-430d-bd6b-b76319bcb720,2026-05-20T12:41:00Z
+8bb6668a-b86f-4cad-bd8e-2ea61c446843,Fairway Housing Association,Gdańsk,Housing cooperative,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2026-05-22T11:04:00Z
+4368a324-dda1-46bb-9e33-99c33be10793,"Oakridge Residences ""North"", Phase 2",Warszawa,Property manager,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2026-05-26T11:31:00Z
+8a7ca461-c782-4f32-9253-28adb0920047,Oakridge Residents Cooperative,Warszawa,Housing cooperative,c368b428-6bdd-493c-a64f-a482a80a08d5,2026-05-31T07:36:00Z
+2797311a-6f52-470b-a47c-0bbb5e74a05e,Kingsbridge Estates,Łódź,Property manager,5f1b33e6-8340-430d-bd6b-b76319bcb720,2026-06-01T07:25:00Z
+291398f4-8bfe-454a-85e9-04a68bd83a88,Lakeside Hotel,Lublin,Hotel,c368b428-6bdd-493c-a64f-a482a80a08d5,2026-06-01T08:27:00Z
+93cc1aae-08a4-4b04-9e44-ec8f0ddf0762,Oakridge Properties,Lublin,Property manager,c368b428-6bdd-493c-a64f-a482a80a08d5,2026-06-03T09:42:00Z
+9a725492-7099-454f-8d27-829b782b0220,Hillcrest Health Centre,Warszawa,Public sector,c368b428-6bdd-493c-a64f-a482a80a08d5,2026-06-04T08:33:00Z
+b9e869ba-bacb-461c-beca-45bdfb764c9b,Ashford Hotels,Lublin,Hotel,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2026-06-10T09:26:00Z
+02f076fb-e215-4372-8a89-56dd59d06443,Fairway Property Management,Warszawa,Property manager,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2026-06-12T10:36:00Z
+196ea247-3a6e-4a3b-85eb-8e91569cce15,Hillcrest City Library,Wrocław,Public sector,5f1b33e6-8340-430d-bd6b-b76319bcb720,2026-06-19T13:05:00Z
+717f33c6-3117-4631-9c97-47cf31c9afff,Sunfield Hotel,,Hotel,b5e654fa-1967-4658-ada1-34aa245501b1,2026-06-25T11:16:00Z
+ee2ca90f-a25f-44be-bb3f-4f2ee2230fc0,Kingsbridge Housing Cooperative,Poznań,Housing cooperative,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2026-07-01T12:13:00Z
+19a1fed6-f229-4879-9304-9f58d00624c0,Brightway Housing Association,Lublin,Housing cooperative,c368b428-6bdd-493c-a64f-a482a80a08d5,2026-07-06T11:26:00Z
+47529b92-cc11-4f5e-a280-4259c59c9c23,Rosewood Housing Cooperative,Poznań,Housing cooperative,c368b428-6bdd-493c-a64f-a482a80a08d5,2026-07-07T10:34:00Z
+690d6520-1a15-4add-ba47-0742f8a015b1,Lakeside Residents Cooperative,Lublin,Housing cooperative,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2026-07-08T07:27:00Z
+1b51839b-873b-4258-9634-f9f1ae7f0d80,Harborview School,Warszawa,Public sector,c368b428-6bdd-493c-a64f-a482a80a08d5,2026-07-10T09:55:00Z
+0266e77c-4115-4db2-b14e-c79adc2de352,Oakmont Plaza,Warszawa,Office building,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2026-07-19T07:30:00Z
+ed0024ab-8bb1-4a1b-b66c-bf412b483b4b,Brightway Estates,Łódź,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2026-07-21T09:59:00Z
+c1bfed1c-0728-44c2-9945-b111fb8746ab,Ashford Property Management,Łódź,Property manager,5f1b33e6-8340-430d-bd6b-b76319bcb720,2026-07-29T12:04:00Z
+03031484-d6a0-4e6e-bbae-9f36d1d282fe,Millstone Housing Association,Szczecin,Housing cooperative,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2026-07-31T14:23:00Z
+2d34e4dc-57ff-4fda-8f66-29ceda643977,Riverside Business Park,,,5f1b33e6-8340-430d-bd6b-b76319bcb720,2026-08-10T14:05:00Z
+9fd6492e-57fe-49e0-8c5c-6df3fc90d04e,Juniper Housing Cooperative,Łódź,Housing cooperative,b5e654fa-1967-4658-ada1-34aa245501b1,2026-08-11T11:21:00Z
+395bb124-24d5-4bf3-898e-8085ba3d3859,Bluewater Offices,Kraków,,c368b428-6bdd-493c-a64f-a482a80a08d5,2026-08-13T10:17:00Z
+8edc494b-0d82-4e8a-8448-b00fc641ec7f,Parkside Housing Association,Lublin,Housing cooperative,5f1b33e6-8340-430d-bd6b-b76319bcb720,2026-08-14T06:58:00Z
+59d698ec-4992-485d-a9d7-37e5b0e62ef1,Silverline Offices,Warszawa,Office building,5f1b33e6-8340-430d-bd6b-b76319bcb720,2026-08-14T10:22:00Z
+118c2f21-3ba6-4541-9f20-bc8f84867b60,Cedar Grove Offices,Kraków,Office building,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2026-08-17T07:08:00Z
+73225491-0d39-4cee-b321-d4d39b2aafd3,Summit Business Park,Wrocław,,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2026-08-18T12:54:00Z
+e183aeed-2837-413d-8552-fcbf161dcecf,Harborview Housing Cooperative,,,5f1b33e6-8340-430d-bd6b-b76319bcb720,2026-08-19T08:07:00Z
+47713574-a1dd-4f66-bed4-0315e1b747b5,Willowbank Hotels,Łódź,Hotel,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2026-08-21T07:15:00Z
+c5707529-c48f-451c-bbd9-d3f2e5633326,Queensgate Office Tower,Łódź,Office building,c368b428-6bdd-493c-a64f-a482a80a08d5,2026-08-21T09:10:00Z
+6202f8c2-e7c9-4bc0-a2f4-082cbb63f06a,Cedar Grove Residents Cooperative,Warszawa,Housing cooperative,c368b428-6bdd-493c-a64f-a482a80a08d5,2026-08-27T12:58:00Z
+9963bb38-a752-43f9-a776-e4ac3cecce51,Stonehill Health Centre,Warszawa,Public sector,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2026-08-28T09:32:00Z
+9b93f1d4-71cf-4ab0-85d4-ed99e66aa00f,Thornbury Sports Hall,Kraków,Public sector,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2026-08-31T06:10:00Z
+3309c3ba-f8e4-4fbe-90a9-cc22d607224d,Silverline School,Poznań,,b5e654fa-1967-4658-ada1-34aa245501b1,2026-09-07T14:00:00Z
+d7c2a01c-f6aa-4a18-8400-1d3e1b43c14d,Stonehill Properties,Poznań,Property manager,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2026-09-08T10:41:00Z
+6a493350-07b4-42c9-b71e-cf541e55ba5a,Goldcrest Hotels,Kraków,Hotel,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2026-09-09T13:31:00Z
+c859c42e-be14-4e29-918d-1c2b5eb679a6,Birchwood Offices,Kraków,Office building,b5e654fa-1967-4658-ada1-34aa245501b1,2026-09-15T06:47:00Z
+54df3f8e-111f-4712-9d12-eb59f389bde9,Sunfield Residents Cooperative,,Housing cooperative,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2026-09-24T09:24:00Z
+c2394d0c-ec5f-4760-8f03-9addbfb1b1e3,Willowbank Health Centre,Kraków,Public sector,5f1b33e6-8340-430d-bd6b-b76319bcb720,2026-09-30T08:14:00Z
+f8dafa93-078d-4cac-a959-3467f572071e,Clearview Hotels,Poznań,Hotel,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2026-10-02T07:18:00Z
+c02c76fb-98c8-4695-bd93-0f63df371dcb,Bluewater Hotel,Gdańsk,Hotel,b5e654fa-1967-4658-ada1-34aa245501b1,2026-10-05T13:53:00Z
+eddc7b45-41b0-4f71-96a8-79dffbbd9d0c,Thornbury Property Management,Gdańsk,Property manager,5f1b33e6-8340-430d-bd6b-b76319bcb720,2026-10-07T12:07:00Z
+3cff0fd8-7a74-4bfe-9f8f-0814af445749,Pinecrest Housing Cooperative,Warszawa,Housing cooperative,1062d2d0-2a63-424b-8a14-0afa0eb9adee,2026-10-14T06:23:00Z
+bb2de30f-eca9-481c-aabe-4d5376461df4,Harborview Offices,Łódź,Office building,c368b428-6bdd-493c-a64f-a482a80a08d5,2026-10-14T12:50:00Z
+ccc4bf7a-8044-4d36-9598-30e4218faf2f,Highland Housing Cooperative,Warszawa,Housing cooperative,b5e654fa-1967-4658-ada1-34aa245501b1,2026-10-15T06:03:00Z
+442021d1-ae35-4022-adc4-1e31c790cb5f,Eastwood Office Tower,Łódź,Office building,c368b428-6bdd-493c-a64f-a482a80a08d5,2026-10-15T06:29:00Z
+1db8a69c-4c34-46ab-bae7-2e82b73cc606,Linden Offices,Łódź,,c368b428-6bdd-493c-a64f-a482a80a08d5,2026-10-21T14:22:00Z
+9ce5f7b7-c324-4795-9c42-9312883abbad,Millstone Residents Cooperative,,Housing cooperative,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2026-10-25T22:35:00Z
+82c887cf-02ee-45a5-82ca-d57701504e3c,Redwood Estates,Łódź,Property manager,1dcdabce-6082-405f-bef0-ffdfd62c9ad2,2026-10-25T23:05:00Z

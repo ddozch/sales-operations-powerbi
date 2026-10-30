@@ -1,0 +1,41 @@
+/// CRM users (Dataverse systemuser) as owners of orders and accounts, plus a "(no owner)" row for orders without an owner.
+table Owner
+
+	column 'Owner Key'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Owner Key
+
+	column Owner
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Owner
+
+	/// Sales, Installation or Back office; "(none)" for the "(no owner)" row.
+	column Department
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Department
+
+	/// FALSE for disabled CRM users, such as former employees who still own records.
+	column 'Is Active'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Is Active
+
+	partition Owner = m
+		mode: import
+		source =
+				let
+				    Source = stgUsers,
+				    Renamed = Table.RenameColumns(Source, {{"systemuserid", "Owner Key"}, {"fullname", "Owner"}, {"ops_department", "Department"}}),
+				    WithActive = Table.AddColumn(Renamed, "Is Active", each [isdisabled] <> 1, type logical),
+				    Users = Table.SelectColumns(WithActive, {"Owner Key", "Owner", "Department", "Is Active"}),
+				    // Orders with an empty owner point to this row, so they stay visible in owner visuals
+				    NoOwner = #table({"Owner Key", "Owner", "Department", "Is Active"}, {{"(no owner)", "(no owner)", "(none)", false}}),
+				    Combined = Table.Combine({Users, NoOwner}),
+				    Result = Table.TransformColumnTypes(Combined, {{"Owner Key", type text}, {"Owner", type text}, {"Department", type text}, {"Is Active", type logical}})
+				in
+				    Result
+

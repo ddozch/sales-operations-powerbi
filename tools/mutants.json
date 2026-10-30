@@ -1,0 +1,123 @@
+[
+  {
+    "name": "No time-zone conversion: local date = UTC date",
+    "kind": "expression", "target": "fnLocalDate",
+    "find": "fnUtcToWarsaw(fnParseUtc(value))", "replace": "fnParseUtc(value)"
+  },
+  {
+    "name": "Fixed UTC+1 all year (no summer time)",
+    "kind": "expression", "target": "fnUtcToWarsaw",
+    "find": "if IsSummer then 2 else 1", "replace": "1"
+  },
+  {
+    "name": "Fixed UTC+2 all year",
+    "kind": "expression", "target": "fnUtcToWarsaw",
+    "find": "if IsSummer then 2 else 1", "replace": "2"
+  },
+  {
+    "name": "US summer-time dates (2nd Sunday of March to 1st Sunday of November)",
+    "kind": "expression", "target": "fnUtcToWarsaw",
+    "find": "IsSummer = utc >= LastSunday(3) and utc < LastSunday(10)",
+    "replace": "IsSummer = utc >= #datetime(Year, 3, 14 - Date.DayOfWeek(#date(Year, 3, 14), Day.Sunday), 1, 0, 0) and utc < #datetime(Year, 11, 7 - Date.DayOfWeek(#date(Year, 11, 7), Day.Sunday), 1, 0, 0)"
+  },
+  {
+    "name": "Summer time starts a week early",
+    "kind": "expression", "target": "fnUtcToWarsaw",
+    "find": "utc >= LastSunday(3)", "replace": "utc >= LastSunday(3) - #duration(7, 0, 0, 0)"
+  },
+  {
+    "name": "Summer time starts a week late",
+    "kind": "expression", "target": "fnUtcToWarsaw",
+    "find": "utc >= LastSunday(3)", "replace": "utc >= LastSunday(3) + #duration(7, 0, 0, 0)"
+  },
+  {
+    "name": "Summer time ends a week early",
+    "kind": "expression", "target": "fnUtcToWarsaw",
+    "find": "utc < LastSunday(10)", "replace": "utc < LastSunday(10) - #duration(7, 0, 0, 0)"
+  },
+  {
+    "name": "Summer time ends a week late",
+    "kind": "expression", "target": "fnUtcToWarsaw",
+    "find": "utc < LastSunday(10)", "replace": "utc < LastSunday(10) + #duration(7, 0, 0, 0)"
+  },
+  {
+    "name": "CSV read as Windows-1250 instead of UTF-8",
+    "kind": "expression", "target": "fnReadCsv",
+    "find": "Encoding = 65001", "replace": "Encoding = 1250"
+  },
+  {
+    "name": "CSV read without RFC 4180 quoting",
+    "kind": "expression", "target": "fnReadCsv",
+    "find": "QuoteStyle = QuoteStyle.Csv", "replace": "QuoteStyle = QuoteStyle.None"
+  },
+  {
+    "name": "Month labels in the culture of a Polish PC",
+    "kind": "partition", "target": "Date",
+    "find": "Culture = \"en-US\"])", "replace": "Culture = \"pl-PL\"])"
+  },
+  {
+    "name": "Month labels without the year",
+    "kind": "partition", "target": "Date",
+    "find": "Format = \"MMM yyyy\"", "replace": "Format = \"MMM\""
+  },
+  {
+    "name": "Is Past compared with today instead of the report date",
+    "kind": "partition", "target": "Date",
+    "find": "[Date] <= ReportDate", "replace": "[Date] <= Date.From(DateTime.LocalNow())"
+  },
+  {
+    "name": "Empty city kept blank instead of (not set)",
+    "kind": "partition", "target": "Customer",
+    "find": "[address1_city] ?? \"(not set)\"", "replace": "[address1_city]"
+  },
+  {
+    "name": "Installation status over all jobs, cancelled jobs included",
+    "kind": "expression", "target": "stgOrderFacts",
+    "find": "Jobs = Table.SelectRows(stgInstallations, each [statuscodename] <> \"Cancelled\"),", "replace": "Jobs = stgInstallations,"
+  },
+  {
+    "name": "A job counts as started only with an actual start",
+    "kind": "expression", "target": "stgOrderFacts",
+    "find": "job[Actual Start Date] ?? job[Actual End Date]", "replace": "job[Actual Start Date]"
+  },
+  {
+    "name": "Delayed start includes a planned start on the report date",
+    "kind": "expression", "target": "stgOrderFacts",
+    "find": "[First Planned Start] < ReportDate", "replace": "[First Planned Start] <= ReportDate"
+  },
+  {
+    "name": "Installation DQ checks skip the jobs of cancelled orders",
+    "kind": "partition", "target": "DQ Checks",
+    "find": "Orders, {\"salesorderid\"}, \"Order\", JoinKind.LeftOuter", "replace": "OpenOrders, {\"salesorderid\"}, \"Order\", JoinKind.Inner"
+  },
+  {
+    "name": "Units Installed keeps the jobs of cancelled orders",
+    "kind": "measure", "target": "Units Installed",
+    "find": "KEEPFILTERS ( Orders[Is Cancelled] = FALSE () )", "replace": "KEEPFILTERS ( Orders[Is Cancelled] IN { TRUE (), FALSE () } )"
+  },
+  {
+    "name": "Units Installed removes every filter on Orders, not only the Date filter",
+    "kind": "measure", "target": "Units Installed",
+    "find": "REMOVEFILTERS ( 'Date' )", "replace": "REMOVEFILTERS ( Orders )"
+  },
+  {
+    "name": "Jobs drops the live jobs of cancelled orders",
+    "kind": "measure", "target": "Jobs",
+    "find": "KEEPFILTERS ( Installations[Job Status] <> \"Cancelled\" )", "replace": "KEEPFILTERS ( Installations[Job Status] <> \"Cancelled\" ), KEEPFILTERS ( Orders[Is Cancelled] = FALSE () )"
+  },
+  {
+    "name": "Signed Value by created date (USERELATIONSHIP missing)",
+    "kind": "measure", "target": "Signed Value",
+    "find": "USERELATIONSHIP ( Orders[Signed Date], 'Date'[Date] ),", "replace": ""
+  },
+  {
+    "name": "Order Value PY YTD not capped at the report date",
+    "kind": "measure", "target": "Order Value PY YTD",
+    "find": "VAR EndDay = MIN ( LastDay, [Report Date] )", "replace": "VAR EndDay = LastDay"
+  },
+  {
+    "name": "Installation Rate % divides by Units Ordered",
+    "kind": "measure", "target": "Installation Rate %",
+    "find": "DIVIDE ( [Units Installed], [Units Planned] )", "replace": "DIVIDE ( [Units Installed], [Units Ordered] )"
+  }
+]

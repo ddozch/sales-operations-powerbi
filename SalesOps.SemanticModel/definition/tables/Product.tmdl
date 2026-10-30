@@ -1,0 +1,52 @@
+/// Product catalog (Dataverse product), plus a "(write-in)" row for free-text order lines.
+table Product
+
+	column 'Product Key'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Product Key
+
+	column 'Product No'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Product No
+
+	column Product
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Product
+
+	/// Alarm systems, CCTV, Access control, Wi-Fi, Services; "Other" for write-in lines.
+	column 'Product Group'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Product Group
+
+	/// FALSE for services and write-in lines: they are sold but not installed.
+	column 'Is Installable'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Is Installable
+
+	column 'List Price'
+		dataType: decimal
+		formatString: #,0.00
+		summarizeBy: none
+		sourceColumn: List Price
+
+	partition Product = m
+		mode: import
+		source =
+				let
+				    Source = stgProducts,
+				    Renamed = Table.RenameColumns(Source, {{"productid", "Product Key"}, {"productnumber", "Product No"}, {"name", "Product"}, {"ops_productgroup", "Product Group"}, {"price", "List Price"}}),
+				    WithInstallable = Table.AddColumn(Renamed, "Is Installable", each [ops_isinstallable] = 1, type logical),
+				    Products = Table.SelectColumns(WithInstallable, {"Product Key", "Product No", "Product", "Product Group", "Is Installable", "List Price"}),
+				    // Write-in lines (free-text products) point to this row
+				    WriteIn = #table({"Product Key", "Product No", "Product", "Product Group", "Is Installable", "List Price"}, {{"(write-in)", "(write-in)", "(write-in)", "Other", false, null}}),
+				    Combined = Table.Combine({Products, WriteIn}),
+				    Result = Table.TransformColumnTypes(Combined, {{"Product Key", type text}, {"Product No", type text}, {"Product", type text}, {"Product Group", type text}, {"Is Installable", type logical}, {"List Price", Currency.Type}})
+				in
+				    Result
+

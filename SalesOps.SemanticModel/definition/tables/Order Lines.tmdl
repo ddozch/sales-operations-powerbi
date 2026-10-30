@@ -1,0 +1,61 @@
+/// Order lines (Dataverse salesorderdetail). Line Amount = Quantity * Unit Price - Discount.
+table 'Order Lines'
+
+	column 'Line Key'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Line Key
+
+	column 'Order Key'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Order Key
+
+	column 'Product Key'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Product Key
+
+	column Quantity
+		dataType: int64
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: Quantity
+
+	column 'Unit Price'
+		dataType: decimal
+		formatString: #,0.00
+		summarizeBy: none
+		sourceColumn: Unit Price
+
+	column Discount
+		dataType: decimal
+		formatString: #,0.00
+		summarizeBy: none
+		sourceColumn: Discount
+
+	column 'Line Amount'
+		dataType: decimal
+		formatString: #,0.00
+		summarizeBy: none
+		sourceColumn: Line Amount
+
+	/// From the product; FALSE for services and write-in lines.
+	column 'Is Installable'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Is Installable
+
+	partition 'Order Lines' = m
+		mode: import
+		source =
+				let
+				    Source = stgOrderLines,
+				    Renamed = Table.RenameColumns(Source, {{"salesorderdetailid", "Line Key"}, {"salesorderid", "Order Key"}, {"quantity", "Quantity"}, {"priceperunit", "Unit Price"}, {"manualdiscountamount", "Discount"}, {"extendedamount", "Line Amount"}}),
+				    Result = Table.SelectColumns(Renamed, {"Line Key", "Order Key", "Product Key", "Quantity", "Unit Price", "Discount", "Line Amount", "Is Installable"})
+				in
+				    Result
+

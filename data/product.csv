@@ -1,0 +1,25 @@
+productid,productnumber,name,ops_productgroup,ops_isinstallable,price
+b38592a6-2fb3-4f61-94a0-b6d869abe43b,AL-101,Alarm control panel,Alarm systems,1,420.00
+979fdac6-9082-45d6-b28f-432711471aa1,AL-102,Motion detector,Alarm systems,1,38.00
+244a0633-1970-48f7-bc44-c2c4ed55e892,AL-103,Door contact,Alarm systems,1,14.50
+1a64662f-a608-40cc-a724-b221a1346655,AL-104,Indoor siren,Alarm systems,1,46.00
+5213637e-7e8d-4917-9f0c-4961605ebfd9,AL-105,Smoke detector,Alarm systems,1,29.90
+ac4be507-6a12-4fcb-931f-ce7dd27eccdd,AL-190,Alarm spare battery,Alarm systems,0,12.00
+70044e90-baaa-4b84-baa5-477d7f824591,CC-201,Dome camera 4MP,CCTV,1,145.00
+bc551f21-1a0d-4a43-b0ec-e38abb3e7a46,CC-202,Bullet camera 8MP,CCTV,1,219.00
+7b522f48-1d91-4153-8fd9-bf5b1f39a802,CC-203,Network video recorder 16ch,CCTV,1,690.00
+61c6e12f-1f43-483d-a70e-c86a197c0942,CC-204,PoE switch 16 port,CCTV,1,310.00
+694a855d-77c9-4b84-b957-59ea2e1b897d,CC-205,Camera mounting kit,CCTV,1,22.00
+6bc0ebe1-51b5-420f-93af-1988b37ae4aa,AC-301,Card reader,Access control,1,165.00
+1f62f5b6-d3bb-4901-b7bc-2702e314d8da,AC-302,Electric door strike,Access control,1,89.00
+589f7fc3-95dc-428b-9ea1-0efa7160813f,AC-303,Access controller 4 doors,Access control,1,540.00
+f8cd532f-1dd1-4e9f-9c49-7f3ed31988f3,AC-304,Video intercom panel,Access control,1,480.00
+1e437a2b-1820-4ed3-93dc-ceed9b610ca7,WF-401,Wi-Fi 6 access point,Wi-Fi,1,189.00
+b5eff2f3-8392-41c9-8456-dfd29a2e7c66,WF-402,Wi-Fi 6E access point,Wi-Fi,1,265.00
+c9623e9d-229f-4d0a-a31d-268b2b5b8791,WF-403,Network controller,Wi-Fi,1,720.00
+91da3ca1-5ca0-47b6-802b-ca8bbc275272,WF-404,Outdoor access point,Wi-Fi,1,340.00
+13ba6d04-8657-47d5-9d7c-a5a8168c5abf,WF-490,Cloud management licence (1 year),Wi-Fi,0,35.00
+412a4a53-27dc-4431-9fb4-deb2c2569d10,SV-501,Site survey,Services,0,450.00
+9da0ad99-079e-4aa0-8bd0-de0200185e9b,SV-502,Commissioning and handover,Services,0,380.00
+2016db01-c37f-4579-90ba-5a80b31d00aa,SV-503,Annual maintenance,Services,0,950.00
+cfcfa8a6-c479-4dc0-8a08-12515fd48397,SV-504,Staff training,Services,0,280.00

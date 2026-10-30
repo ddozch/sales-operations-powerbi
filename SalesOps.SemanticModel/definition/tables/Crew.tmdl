@@ -1,0 +1,21 @@
+/// Installation crews, plus "(not assigned)" for jobs without a crew.
+table Crew
+
+	column Crew
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Crew
+
+	partition Crew = m
+		mode: import
+		source =
+				let
+				    Known = {"Central", "East", "North", "South", "West", "(not assigned)"},
+				    // A crew that appears only in the export is added, so its jobs never fall into the blank row;
+				    // the comparison ignores case because relationships in the model do
+				    Found = List.RemoveNulls(stgInstallations[ops_crew]),
+				    Crews = List.Distinct(Known & Found, Comparer.OrdinalIgnoreCase),
+				    Result = #table(type table [Crew = text], List.Transform(Crews, each {_}))
+				in
+				    Result
+

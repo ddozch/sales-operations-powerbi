@@ -1,0 +1,80 @@
+/// Calendar 2025-2026, marked as the date table. Is Past compares with the report date, not with today.
+table Date
+	dataCategory: Time
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Year
+
+	/// Quarter label such as "Q1 2026".
+	column Quarter
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Quarter
+		sortByColumn: 'Quarter Sort'
+
+	column 'Quarter Sort'
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Quarter Sort
+
+	column 'Month Number'
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Month Number
+
+	/// Month label such as "Jan 2026", sorted by Month Start.
+	column Month
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Month
+		sortByColumn: 'Month Start'
+
+	column 'Month Start'
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: Month Start
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// TRUE for dates up to and including the report date.
+	column 'Is Past'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Is Past
+
+	partition Date = m
+		mode: import
+		source =
+				let
+				    ReportDate = stgExportInfo{0}[Report Date],
+				    FirstDate = #date(2025, 1, 1),
+				    LastDate = #date(2026, 12, 31),
+				    Dates = List.Dates(FirstDate, Duration.Days(LastDate - FirstDate) + 1, #duration(1, 0, 0, 0)),
+				    Source = #table(type table [Date = date], List.Transform(Dates, each {_})),
+				    WithYear = Table.AddColumn(Source, "Year", each Date.Year([Date]), Int64.Type),
+				    WithQuarter = Table.AddColumn(WithYear, "Quarter", each "Q" & Text.From(Date.QuarterOfYear([Date]), "en-US") & " " & Text.From([Year], "en-US"), type text),
+				    WithQuarterSort = Table.AddColumn(WithQuarter, "Quarter Sort", each [Year] * 10 + Date.QuarterOfYear([Date]), Int64.Type),
+				    WithMonthNumber = Table.AddColumn(WithQuarterSort, "Month Number", each Date.Month([Date]), Int64.Type),
+				    // Fixed culture: month names stay English on a Polish or other non-English PC
+				    WithMonth = Table.AddColumn(WithMonthNumber, "Month", each Date.ToText([Date], [Format = "MMM yyyy", Culture = "en-US"]), type text),
+				    WithMonthStart = Table.AddColumn(WithMonth, "Month Start", each Date.StartOfMonth([Date]), type date),
+				    Result = Table.AddColumn(WithMonthStart, "Is Past", each [Date] <= ReportDate, type logical)
+				in
+				    Result
+

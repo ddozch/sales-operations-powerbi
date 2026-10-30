@@ -1,0 +1,74 @@
+/// One row per applicable record and DQ field: is the field filled (1) or empty (0). Owner is the owner of the related order, or the account owner for customer checks.
+table 'DQ Checks'
+
+	column 'Field Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Field Key
+
+	/// Key of the checked record (account, order, order line or installation).
+	column 'Record Key'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Record Key
+
+	column 'Owner Key'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Owner Key
+
+	/// Local created date of the record; for order lines the order's.
+	column 'Created Date'
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: Created Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// 1 when the field is filled, 0 when it is empty.
+	column 'Is Filled'
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Is Filled
+
+	partition 'DQ Checks' = m
+		mode: import
+		source =
+				let
+				    Orders = Table.SelectColumns(stgOrderFacts, {"salesorderid", "ownerid", "Owner Key", "Created Date", "Signed Date", "ops_plannedinstallmonth", "Is Cancelled", "Installable Units"}),
+				    OpenOrders = Table.SelectRows(Orders, each not [Is Cancelled]),
+				    // Line checks take the owner and created date of their order
+				    Lines = Table.ExpandTableColumn(Table.NestedJoin(stgOrderLines, {"salesorderid"}, OpenOrders, {"salesorderid"}, "Order", JoinKind.Inner), "Order", {"Owner Key", "Created Date"}),
+				    // Job checks take the owner of their order and keep their own created date
+				    JobsJoined = Table.ExpandTableColumn(Table.NestedJoin(stgInstallations, {"ops_salesorderid"}, Orders, {"salesorderid"}, "Order", JoinKind.LeftOuter), "Order", {"Owner Key"}),
+				    Jobs = Table.TransformColumns(JobsJoined, {{"Owner Key", each _ ?? "(no owner)", type text}}),
+				    JobsWithStatus = (statuses as list) as table => Table.SelectRows(Jobs, each List.Contains(statuses, [statuscodename])),
+				    Check = (rows as table, fieldKey as number, keyColumn as text, isFilled as function) as table =>
+				        let
+				            WithKey = Table.AddColumn(rows, "Record Key", each Record.Field(_, keyColumn), type text),
+				            WithFilled = Table.AddColumn(WithKey, "Is Filled", each if isFilled(_) then 1 else 0, Int64.Type),
+				            WithField = Table.AddColumn(WithFilled, "Field Key", each fieldKey, Int64.Type)
+				        in
+				            Table.SelectColumns(WithField, {"Field Key", "Record Key", "Owner Key", "Created Date", "Is Filled"}),
+				    Combined = Table.Combine({
+				        Check(stgAccounts, 1, "accountid", each [address1_city] <> null),
+				        Check(stgAccounts, 2, "accountid", each [ops_segment] <> null),
+				        Check(OpenOrders, 3, "salesorderid", each [ownerid] <> null),
+				        Check(Table.SelectRows(OpenOrders, each [Signed Date] <> null and [Installable Units] > 0), 4, "salesorderid", each [ops_plannedinstallmonth] <> null),
+				        Check(Lines, 5, "salesorderdetailid", each [productid] <> null),
+				        Check(JobsWithStatus({"Scheduled", "In progress", "Completed"}), 6, "ops_installationid", each [ops_crew] <> null),
+				        Check(Table.SelectRows(Jobs, each [statuscodename] <> "Cancelled"), 7, "ops_installationid", each [ops_coordinatorid] <> null),
+				        Check(JobsWithStatus({"In progress", "Completed"}), 8, "ops_installationid", each [ops_actualstart] <> null),
+				        Check(JobsWithStatus({"Completed"}), 9, "ops_installationid", each [ops_specificationdate] <> null)
+				    }),
+				    Result = Table.TransformColumnTypes(Combined, {{"Field Key", Int64.Type}, {"Record Key", type text}, {"Owner Key", type text}, {"Created Date", type date}, {"Is Filled", Int64.Type}})
+				in
+				    Result
+

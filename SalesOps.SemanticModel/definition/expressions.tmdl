@@ -1,0 +1,210 @@
+/// Folder with the Dataverse CSV export. Absolute path ending with a backslash. Set it with tools\set_data_folder.ps1 after a clone, not in Power BI Desktop: the script also registers the Git filter that stores a placeholder instead of the path (clean filter datafolder, see .gitattributes).
+expression DataFolder = "C:\path\to\sales-operations-powerbi\data\" meta [IsParameterQuery = true, Type = "Text", IsParameterQueryRequired = true]
+	queryGroup: Parameters
+
+	annotation PBI_ResultType = Text
+
+/// Reads one CSV file of the export: UTF-8, comma separated, RFC 4180 quoting, header row. Empty fields become null.
+expression fnReadCsv =
+		(fileName as text) as table =>
+		let
+		    Source = Csv.Document(File.Contents(DataFolder & fileName), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+		    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+		    // The export writes null as an empty field; typed columns must get null, not ""
+		    Result = Table.TransformColumns(Promoted, {}, each if _ = "" then null else _)
+		in
+		    Result
+	queryGroup: Functions
+
+	annotation PBI_ResultType = Function
+
+/// Parses a Dataverse UTC timestamp such as 2026-03-31T22:30:00Z to a datetime in UTC (no zone).
+expression fnParseUtc =
+		(value as nullable text) as nullable datetime =>
+		    if value = null then null
+		    else DateTimeZone.RemoveZone(DateTimeZone.ToUtc(DateTimeZone.FromText(value, [Culture = "en-US"])))
+	queryGroup: Functions
+
+	annotation PBI_ResultType = Function
+
+/// Converts a UTC datetime to Europe/Warsaw local time by the EU rule (CET UTC+1, CEST UTC+2 from the last Sunday of March 01:00 UTC to the last Sunday of October 01:00 UTC). Does not depend on the time zone of the PC.
+expression fnUtcToWarsaw =
+		(utc as nullable datetime) as nullable datetime =>
+		    if utc = null then null
+		    else
+		        let
+		            Year = Date.Year(utc),
+		            // March and October both have 31 days: step back from the 31st to its Sunday
+		            LastSunday = (month as number) as datetime =>
+		                #datetime(Year, month, 31 - Date.DayOfWeek(#date(Year, month, 31), Day.Sunday), 1, 0, 0),
+		            IsSummer = utc >= LastSunday(3) and utc < LastSunday(10)
+		        in
+		            utc + #duration(0, if IsSummer then 2 else 1, 0, 0)
+	queryGroup: Functions
+
+	annotation PBI_ResultType = Function
+
+/// Local (Europe/Warsaw) date of a Dataverse UTC timestamp text; null stays null.
+expression fnLocalDate =
+		(value as nullable text) as nullable date =>
+		    let
+		        Local = fnUtcToWarsaw(fnParseUtc(value))
+		    in
+		        if Local = null then null else Date.From(Local)
+	queryGroup: Functions
+
+	annotation PBI_ResultType = Function
+
+/// export_info.csv: when the export was taken. Its local date is the report date of the whole model.
+expression stgExportInfo =
+		let
+		    Source = fnReadCsv("export_info.csv"),
+		    Typed = Table.TransformColumnTypes(Source, {{"exportedon", type text}, {"source", type text}}, "en-US"),
+		    WithReportDate = Table.AddColumn(Typed, "Report Date", each fnLocalDate([exportedon]), type date),
+		    Result = Table.RenameColumns(WithReportDate, {{"source", "Source"}})
+		in
+		    Result
+	queryGroup: Staging
+
+	annotation PBI_ResultType = Table
+
+/// systemuser.csv: CRM users (sales managers, installation coordinators, back office).
+expression stgUsers =
+		let
+		    Source = fnReadCsv("systemuser.csv"),
+		    Result = Table.TransformColumnTypes(Source, {{"systemuserid", type text}, {"fullname", type text}, {"ops_department", type text}, {"isdisabled", Int64.Type}}, "en-US")
+		in
+		    Result
+	queryGroup: Staging
+
+	annotation PBI_ResultType = Table
+
+/// account.csv: customers.
+expression stgAccounts =
+		let
+		    Source = fnReadCsv("account.csv"),
+		    Typed = Table.TransformColumnTypes(Source, {{"accountid", type text}, {"name", type text}, {"address1_city", type text}, {"ops_segment", type text}, {"ownerid", type text}, {"createdon", type text}}, "en-US"),
+		    WithCreated = Table.AddColumn(Typed, "Created Date", each fnLocalDate([createdon]), type date),
+		    // Account checks of the data-quality page belong to the account owner
+		    Result = Table.AddColumn(WithCreated, "Owner Key", each [ownerid] ?? "(no owner)", type text)
+		in
+		    Result
+	queryGroup: Staging
+
+	annotation PBI_ResultType = Table
+
+/// product.csv: product catalog.
+expression stgProducts =
+		let
+		    Source = fnReadCsv("product.csv"),
+		    Result = Table.TransformColumnTypes(Source, {{"productid", type text}, {"productnumber", type text}, {"name", type text}, {"ops_productgroup", type text}, {"ops_isinstallable", Int64.Type}, {"price", Currency.Type}}, "en-US")
+		in
+		    Result
+	queryGroup: Staging
+
+	annotation PBI_ResultType = Table
+
+/// salesorder.csv: orders with local created and signed dates.
+expression stgOrders =
+		let
+		    Source = fnReadCsv("salesorder.csv"),
+		    Typed = Table.TransformColumnTypes(Source, {{"salesorderid", type text}, {"ordernumber", type text}, {"customerid", type text}, {"ownerid", type text}, {"createdon", type text}, {"ops_signedon", type text}, {"ops_plannedinstallmonth", type date}, {"statecode", Int64.Type}, {"statecodename", type text}, {"totalamount", Currency.Type}}, "en-US"),
+		    WithCreated = Table.AddColumn(Typed, "Created Date", each fnLocalDate([createdon]), type date),
+		    WithSigned = Table.AddColumn(WithCreated, "Signed Date", each fnLocalDate([ops_signedon]), type date),
+		    // Orders without an owner point to the "(no owner)" row of Owner, so they stay visible
+		    WithOwnerKey = Table.AddColumn(WithSigned, "Owner Key", each [ownerid] ?? "(no owner)", type text),
+		    // Dataverse statecode 2 = Canceled
+		    Result = Table.AddColumn(WithOwnerKey, "Is Cancelled", each [statecode] = 2, type logical)
+		in
+		    Result
+	queryGroup: Staging
+
+	annotation PBI_ResultType = Table
+
+/// salesorderdetail.csv as typed columns. It only reads the file: a query that reads a source must not also combine other queries, or the refresh fails with Formula.Firewall when privacy levels are on.
+expression rawOrderLines =
+		let
+		    Source = fnReadCsv("salesorderdetail.csv"),
+		    Result = Table.TransformColumnTypes(Source, {{"salesorderdetailid", type text}, {"salesorderid", type text}, {"productid", type text}, {"isproductoverridden", Int64.Type}, {"productdescription", type text}, {"quantity", Int64.Type}, {"priceperunit", Currency.Type}, {"manualdiscountamount", Currency.Type}, {"extendedamount", Currency.Type}}, "en-US")
+		in
+		    Result
+	queryGroup: Staging
+
+	annotation PBI_ResultType = Table
+
+/// Order lines with the product key and the installable flag of the product.
+expression stgOrderLines =
+		let
+		    // Write-in lines have no product; they point to the "(write-in)" row of Product
+		    WithProductKey = Table.AddColumn(rawOrderLines, "Product Key", each [productid] ?? "(write-in)", type text),
+		    Products = Table.SelectColumns(stgProducts, {"productid", "ops_isinstallable"}),
+		    Joined = Table.NestedJoin(WithProductKey, {"productid"}, Products, {"productid"}, "Product", JoinKind.LeftOuter),
+		    Expanded = Table.ExpandTableColumn(Joined, "Product", {"ops_isinstallable"}),
+		    // Write-in lines and services are never installed
+		    Result = Table.AddColumn(Expanded, "Is Installable", each [ops_isinstallable] = 1, type logical)
+		in
+		    Result
+	queryGroup: Staging
+
+	annotation PBI_ResultType = Table
+
+/// ops_installation.csv as typed columns, with local actual and created dates. It only reads the file (see rawOrderLines).
+expression rawInstallations =
+		let
+		    Source = fnReadCsv("ops_installation.csv"),
+		    Typed = Table.TransformColumnTypes(Source, {{"ops_installationid", type text}, {"ops_name", type text}, {"ops_salesorderid", type text}, {"ops_crew", type text}, {"ops_coordinatorid", type text}, {"ops_plannedstart", type date}, {"ops_plannedend", type date}, {"ops_actualstart", type text}, {"ops_actualend", type text}, {"ops_installedunits", Int64.Type}, {"statuscode", Int64.Type}, {"statuscodename", type text}, {"ops_specificationdate", type date}, {"createdon", type text}}, "en-US"),
+		    WithStart = Table.AddColumn(Typed, "Actual Start Date", each fnLocalDate([ops_actualstart]), type date),
+		    WithEnd = Table.AddColumn(WithStart, "Actual End Date", each fnLocalDate([ops_actualend]), type date),
+		    Result = Table.AddColumn(WithEnd, "Created Date", each fnLocalDate([createdon]), type date)
+		in
+		    Result
+	queryGroup: Staging
+
+	annotation PBI_ResultType = Table
+
+/// Installation jobs with the coordinator name.
+expression stgInstallations =
+		let
+		    Users = Table.SelectColumns(stgUsers, {"systemuserid", "fullname"}),
+		    Joined = Table.NestedJoin(rawInstallations, {"ops_coordinatorid"}, Users, {"systemuserid"}, "Coordinator", JoinKind.LeftOuter),
+		    Result = Table.ExpandTableColumn(Joined, "Coordinator", {"fullname"}, {"Coordinator Name"})
+		in
+		    Result
+	queryGroup: Staging
+
+	annotation PBI_ResultType = Table
+
+/// Orders plus installable units, installed units and installation status as of the report date.
+expression stgOrderFacts =
+		let
+		    ReportDate = stgExportInfo{0}[Report Date],
+		    // Units on installable lines; services and write-ins are not installed
+		    Units = Table.Group(Table.SelectRows(stgOrderLines, each [Is Installable]), {"salesorderid"}, {{"Installable Units", each List.Sum([quantity]), Int64.Type}}),
+		    // The status rules use the order's non-cancelled jobs only
+		    Jobs = Table.SelectRows(stgInstallations, each [statuscodename] <> "Cancelled"),
+		    JobFacts = Table.Group(Jobs, {"ops_salesorderid"}, {
+		        {"Installed Units", each List.Sum(Table.SelectRows(_, (job) => job[Actual End Date] <> null and job[Actual End Date] <= ReportDate)[ops_installedunits]), Int64.Type},
+		        {"Last Actual End", each List.Max(List.Select([Actual End Date], (d) => d <> null and d <= ReportDate)), type date},
+		        // A job with an actual end but no actual start (the crew entered only the end) has started too
+		        {"Any Started", each List.AnyTrue(List.Transform(Table.ToRecords(_), (job) => let d = job[Actual Start Date] ?? job[Actual End Date] in d <> null and d <= ReportDate)), type logical},
+		        {"First Planned Start", each List.Min(List.RemoveNulls([ops_plannedstart])), type date}
+		    }),
+		    WithUnits = Table.ExpandTableColumn(Table.NestedJoin(stgOrders, {"salesorderid"}, Units, {"salesorderid"}, "Units", JoinKind.LeftOuter), "Units", {"Installable Units"}),
+		    WithJobs = Table.ExpandTableColumn(Table.NestedJoin(WithUnits, {"salesorderid"}, JobFacts, {"ops_salesorderid"}, "Jobs", JoinKind.LeftOuter), "Jobs", {"Installed Units", "Last Actual End", "Any Started", "First Planned Start"}),
+		    Defaults = Table.TransformColumns(WithJobs, {{"Installable Units", each _ ?? 0, Int64.Type}, {"Installed Units", each _ ?? 0, Int64.Type}, {"Any Started", each _ ?? false, type logical}}),
+		    // The status rules of the Excel VBA Order & Installation Tracker, evaluated in this order
+		    WithStatus = Table.AddColumn(Defaults, "Installation Status", each
+		        if [Is Cancelled] then "Cancelled"
+		        else if [Installable Units] = 0 then "No installation"
+		        else if [Installed Units] >= [Installable Units] then "Installed"
+		        else if [Any Started] then "In progress"
+		        else if [First Planned Start] = null then "To schedule"
+		        else if [First Planned Start] < ReportDate then "Delayed start"
+		        else "Scheduled", type text),
+		    Result = Table.AddColumn(WithStatus, "Installed Date", each if [Installation Status] = "Installed" then [Last Actual End] else null, type date)
+		in
+		    Result
+	queryGroup: Staging
+
+	annotation PBI_ResultType = Table
+

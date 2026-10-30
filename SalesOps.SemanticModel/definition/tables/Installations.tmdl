@@ -1,0 +1,109 @@
+/// Installation jobs (custom table ops_installation). An order has one job, or two for a split installation.
+table Installations
+
+	column 'Installation Key'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Installation Key
+
+	column 'Installation No'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Installation No
+
+	column 'Order Key'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Order Key
+
+	/// Crew name, or "(not assigned)". Hidden: use Crew[Crew], which filters this table.
+	column Crew
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Crew
+
+	/// Name of the installation coordinator, or "(not assigned)".
+	column Coordinator
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Coordinator
+
+	column 'Planned Start'
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: Planned Start
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Planned End'
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: Planned End
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Local date of the actual start.
+	column 'Actual Start Date'
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: Actual Start Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Local date of the actual end; Units Installed counts by this date.
+	column 'Actual End Date'
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: Actual End Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Installed Units'
+		dataType: int64
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: Installed Units
+
+	/// Not scheduled, Scheduled, In progress, Completed or Cancelled.
+	column 'Job Status'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Job Status
+
+	/// Date of the specification of the completed work (date only).
+	column 'Specification Date'
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: Specification Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Local date the job was created.
+	column 'Created Date'
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: Created Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition Installations = m
+		mode: import
+		source =
+				let
+				    Source = stgInstallations,
+				    Renamed = Table.RenameColumns(Source, {{"ops_installationid", "Installation Key"}, {"ops_name", "Installation No"}, {"ops_salesorderid", "Order Key"}, {"ops_plannedstart", "Planned Start"}, {"ops_plannedend", "Planned End"}, {"ops_installedunits", "Installed Units"}, {"statuscodename", "Job Status"}, {"ops_specificationdate", "Specification Date"}}),
+				    WithCrew = Table.AddColumn(Renamed, "Crew", each [ops_crew] ?? "(not assigned)", type text),
+				    WithCoordinator = Table.AddColumn(WithCrew, "Coordinator", each [Coordinator Name] ?? "(not assigned)", type text),
+				    Result = Table.SelectColumns(WithCoordinator, {"Installation Key", "Installation No", "Order Key", "Crew", "Coordinator", "Planned Start", "Planned End", "Actual Start Date", "Actual End Date", "Installed Units", "Job Status", "Specification Date", "Created Date"})
+				in
+				    Result
+

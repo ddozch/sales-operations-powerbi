@@ -1,0 +1,18 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+# .NET build output and Visual Studio
+tools/ModelTool/bin/
+tools/ModelTool/obj/
+.vs/
+*.user
+# Power BI Desktop: local settings, the data cache of the project (holds the loaded data) and
+# Power Query edits not applied yet (they can hold the data folder path of the PC)
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+**/.pbi/unappliedChanges.json
+# Windows and Office
+Thumbs.db
+desktop.ini
+~$*
